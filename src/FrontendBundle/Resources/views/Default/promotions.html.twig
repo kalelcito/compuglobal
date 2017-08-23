@@ -1,0 +1,836 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+
+{% block title %}{{ parent() }} | Promociones{% endblock %}
+
+{% block body %}
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="carousel slide margin-tb" data-ride="carousel" id="myCarousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active" data-interval="2000"><img src="{{ asset('assets/img/slide_1.jpg') }}" alt="Banner Promociones"></div>
+                        <div class="item" data-interval="1"><img src="{{ asset('assets/img/slide_2.jpg') }}" alt="Banner Promociones"></div>
+                    </div>
+                    <div><a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button"
+                                                                                                                                                                                                         data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container marquee-promos">
+                <div class="col-xs-9 no-padding">
+                    <marquee>
+                        <span>marquee</span>
+                        <span>marquee</span>
+                        <span>marquee</span>
+                        <span>marquee</span>
+                        <span>marquee</span>
+                    </marquee>
+                </div>
+                <div class="col-xs-3 no-padding">
+                    <h3 class="text-center">+ Promociones</h3></div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12 productos">
+            <div class="container computo margin-tb">
+                <div class="col-xs-6 hidden-sm hidden-md hidden-lg">
+                    <h4 class="text-center">Cómputo </h4></div>
+                <div class="col-xs-2 controles">
+                    <div class="row computo-controles">
+                        <div class="col-md-8 hidden-xs no-padding">
+                            <h4 class="text-center">Cómputo </h4></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">| </h3></a></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+ </h2></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-xs-12">
+                    <div class="carousel slide computo-carousel" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+                            <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container computo margin-tb perifericos">
+                <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
+                    <h4 class="text-center">Periféricos </h4></div>
+                <div class="col-sm-push-10 col-xs-2 controles">
+                    <div class="row perifericos-controles">
+                        <div class="col-md-8 hidden-xs no-padding">
+                            <h4 class="text-center">Periféricos </h4></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">|</h3></a></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+</h2></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-sm-pull-2 col-xs-12">
+                    <div class="carousel slide perifericos-carousel" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay peri">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+                            <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container computo margin-tb impresoras">
+                <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
+                    <h4 class="text-center">Impresoras </h4></div>
+                <div class="col-xs-2 controles">
+                    <div class="row impresoras-controles">
+                        <div class="col-md-8 hidden-xs no-padding">
+                            <h4 class="text-center">Impresoras </h4></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">|</h3></a></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+</h2></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-xs-12">
+                    <div class="carousel slide impresoras-carousel" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay imp">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+                            <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container computo margin-tb accesorios">
+                <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
+                    <h4 class="text-center">Accesorios </h4></div>
+                <div class="col-sm-push-10 col-xs-2 controles">
+                    <div class="row accesorios-controles">
+                        <div class="col-md-8 hidden-xs no-padding">
+                            <h4 class="text-center">Accesorios </h4></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">| </h3></a></div>
+                        <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+ </h2></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-sm-pull-2 col-xs-12">
+                    <div class="carousel slide accesorios-carousel" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6 lay acc">
+                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
+                                        <strong>Bold</strong>
+                                        <p>Paragraph</p>
+                                        <div class="over">
+                                            <p>Computadora HP x240</p>
+                                            <p>SKU: S45152</p>
+                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                                        </div>
+                                        <div class="over2">
+                                            <i class="fa fa-hand-o-up"></i>
+                                            <h2>¡LO QUIERO!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+                            <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container tecnologia">
+                <div class="row">
+                    <div class="col-xs-6 no-padding tecnologia-controles">
+                        <h4>Toda la tecnología y mucho más</h4>
+                        <h3 class="text-center" data-slide="prev">-</h3>
+                        <h2 class="text-center" data-slide="next">+</h2></div>
+                </div>
+                <div class="row tecnologia-carousel">
+                    <div class="col-md-12">
+                        <div class="carousel slide margin-tb" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6 lay tech">
+                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
+                                            <strong>Bold</strong>
+                                            <p>Paragraph</p>
+                                            <div class="over">
+                                                <p>Computadora HP x240</p>
+                                                <p>SKU: S45152</p>
+                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                            </div>
+                                            <div class="over2">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <h2>¡LO QUIERO!</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+                                <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container blog">
+                <div class="col-xs-5 colores">
+                    <div class="row">
+                        <div class="col-xs-2 no-padding cafe"></div>
+                        <div class="col-xs-2 no-padding rojo"></div>
+                        <div class="col-xs-2 no-padding amarillo"></div>
+                        <div class="col-xs-2 no-padding verde"></div>
+                        <div class="col-xs-2 no-padding azul"></div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-7"><a href="{{ path('blog') }}"><h2>&gt; blog</h2></a></div>
+                <div class="col-sm-5 col-xs-12">
+                    <p>Si quieres enterarte de todo lo que pasa en el mundo de la tecnología da clic y revisa nuestros artículos. Compuglobal a la vanguardia de la información que necesitas. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="pedido">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Haz tu pedido</h4></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <label>Nombre </label>
+                            </div>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" required="" autofocus="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <label>Mail </label>
+                            </div>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="email" required="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <label>Teléfono </label>
+                            </div>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" required="" autofocus="">
+                            </div>
+                        </div>
+                        <div class="row resume">
+                            <div class="col-xs-6">
+                                <h4>Computadora HP X240</h4>
+                                <h4>SKU 54H5H5</h4>
+                                <p class="text-justify">Procesador Ci7, Disco duro AMD A10, 8GB en Ram, DVD/RW.</p>
+                                <strong>Precio Unitario IVA incluído</strong>
+                                <h4 class="precio">$ 6,250.00</h4></div>
+                            <div class="col-xs-6">
+                                <input class="form-control quantity" type="number" min="0" step="1">
+                                <h3>Piezas(s) </h3>
+                                <h2 class="text-right">$ 0.00</h2></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6">
+                        <button class="btn btn-default btn-block pedido-btn" type="button" data-dismiss="modal">Cancelar </button>
+                    </div>
+                    <div class="col-sm-6 col-xs-9">
+                        <button class="btn btn-primary btn-block pedido-btn finish" type="button">Realizar pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="gracias">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <h1>Gracias </h1><strong>¡Tu pedido fue levantado con éxito!</strong>
+                    <p>En breve un ejecutivo se pondrá en contacto contigo para revisar términos de entrega y pago de tu producto.</p>
+                    <button class="btn btn-default pedido-btn" type="button" data-dismiss="modal">Seguir en la página</button>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

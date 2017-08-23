@@ -1,0 +1,122 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block title %}{{ parent() }} | Cursos{% endblock %}
+
+{% block body %}
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row cursos-marquee">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <h3>cursos y capacitaciones</h3></div>
+                    <div class="col-xs-6">
+                        <marquee>
+                            <span>marquee</span>
+                            <span>marquee</span>
+                            <span>marquee</span>
+                            <span>marquee</span>
+                            <span>marquee</span>
+                            <span>marquee</span>
+                        </marquee>
+                    </div>
+                    <div class="col-xs-1">
+                        <h4 class="text-center minus" data-slide="prev">-</h4></div>
+                    <div class="col-xs-1">
+                        <h4 class="text-center" data-slide="next">+</h4></div>
+                </div>
+                <div class="row cursos-car">
+                    <div class="col-md-12">
+                        <div class="carousel slide cursos-carousel" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active"><img class="img-responsive" src="{{ asset('assets/img/cursos_slide_1.jpg') }}" alt="Banner Cursos"></div>
+                                <div class="item"><img class="img-responsive" src="{{ asset('assets/img/cursos_slide_2.jpg') }}" alt="Banner Cursos"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container cursos">
+                <div class="row">
+                    <div class="col-sm-6" style="background: rgb(36,36,36);" data-toggle="modal" modal="same">
+                        <h3>EMPODERA A TU EQUIPO DE TRABAJO</h3>
+                        <p>Invierte en la preparación de tu equipo de trabajo, ellos harán más rentable tu negocio.</p>
+                        <h2>&lt; ¿POR QUÉ HACERLO? &gt;</h2></div>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(194,6,5);">
+                            <h4>9 de Septiembre</h4>
+                            <h5>El gerente coach en ventas</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(162,8,4);">
+                            <h4>14 de OCTUBRE</h4>
+                            <h5>Planeación estratégica y balance scord card</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(119,5,0);">
+                            <h4>25 DE NOVIEMBRE</h4>
+                            <h5>Planeación, Integración y Trabajo en Equipo</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(0,40,65);">
+                            <h4>13 de enero</h4>
+                            <h5>Liderazgo y coaching para equipos</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(1,58,90);">
+                            <h4>17 de febrero</h4>
+                            <h5>Actitud tu capital</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(1,84,133);">
+                            <h4>17 de marzo</h4>
+                            <h5>Ventas, programación neurolingüística y coaching</h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(200,113,0);">
+                            <h4>PRÓXIMAMENTE </h4>
+                            <h5>Ventas, programación neurolingüística y coaching </h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(249,142,0);">
+                            <h4>PRÓXIMAMENTE </h4>
+                            <h5>Ventas, programación neurolingüística y coaching </h5>
+                        </div>
+                    </a>
+                    <a href="{{ path('course',{'slug':'curso'}) }}">
+                        <div class="col-sm-2" style="background: rgb(255,180,0);">
+                            <h4>PRÓXIMAMENTE </h4>
+                            <h5>Ventas, programación neurolingüística y coaching </h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container manager">
+                <div class="row">
+                    <div class="col-sm-5" data-toggle="modal" modal="same"><img class="img-responsive" src="{{ asset('assets/img/manager.jpg') }}"></div>
+                    <div class="col-sm-7">
+                        <div class="manager-div">
+                            <h1>EL GERENTE ES LA CLAVE</h1>
+                            <p>Definamos que es un coach, es aquella persona facilitadora del aprendizaje que estímula la toma de conciencia, la visión integral de los hechos y la acción desde estrategias efectivas y diferentes...</p>
+                            <h3 data-toggle="modal" modal="same">VER MÁS ACERCA DE ESTE ARTÍCULO &gt;&gt;</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block contacto %}
+    class="active"
+{% endblock %}
+
+{% block title %}{{ parent() }} | Contacto{% endblock %}
+
+{% block body %}
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container contacto">
+                <h1 class="text-center">Contáctanos </h1>
+                <div class="col-md-8 col-md-offset-2">
+                    <form>
+                        <input class="form-control" type="text" placeholder="Nombre">
+                        <input class="form-control" type="text" placeholder="Empresa">
+                        <input class="form-control" type="email" placeholder="E-mail">
+                        <input class="form-control" type="tel" placeholder="Teléfono">
+                        <textarea class="form-control" rows="5" placeholder="Comentarios"></textarea>
+                        <button class="btn btn-default" type="submit">Enviar </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

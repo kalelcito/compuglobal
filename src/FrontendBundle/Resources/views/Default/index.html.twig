@@ -1,0 +1,429 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block inicio %}
+    class="active"
+{% endblock %}
+
+{% block title %}{{ parent() }} | Inicio{% endblock %}
+
+{% block body %}
+    <div class="row no-margin grey">
+        <div class="col-md-12">
+            <div class="container social-top">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <a href="https://www.facebook.com/compuglobalmx" target="_blank"><img class="img-responsive" src="{{ asset('assets/img/icon_facebook.jpg') }}"></a>
+                        <a href="https://twitter.com/compuglobalmx" target="_blank"><img class="img-responsive" src="{{ asset('assets/img/icon_twitter.jpg') }}"></a>
+                        <a href="#" target="_blank"><img class="img-responsive" src="{{ asset('assets/img/icon_instagram.jpg') }}"></a>
+                        <h3>Toda la tecnología</h3></div>
+                    <div class="col-sm-7">
+                        <marquee>
+                            <span>Marqueee marquee marquee</span>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container articles-section">
+                <div class="row">
+                    <div class="col-sm-8 rb">
+                        <div class="div">
+                            <div class="div-img"><img src="{{ asset('assets/img/article_1.jpg') }}"></div>
+                            <div class="div-txt">
+                                <h2>ALCATEL A3 XL UNBOXING (VIDEO)</h2>
+                                <p>ARTURO GOGA X JULIO 25, 2017</p>
+                            </div>
+                            <div class="overlay"></div>
+                            <a href="#" data-toggle="modal" modal="same"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 lb">
+                        <div class="div">
+                            <div class="div-img"><img src="{{ asset('assets/img/article_2.jpg') }}"></div>
+                            <div class="div-txt">
+                                <h2 class="mini">ASÍ CELEBRA NIKON SUS 100 AÑOS!</h2>
+                                <p>ARTURO GOGA X JULIO 25, 2017</p>
+                            </div>
+                            <div class="overlay"></div>
+                            <a href="#" data-toggle="modal" modal="same"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 rt">
+                        <div class="div">
+                            <div class="div-img"><img src="{{ asset('assets/img/article_3.jpg') }}"></div>
+                            <div class="div-txt">
+                                <h2 class="mini">EL NOKIA 8, SMARTPHONE DE GAMA ALTA, SALDRÁ EL 16 DE AGOSTO</h2>
+                                <p>ARTURO GOGA X JULIO 25, 2017</p>
+                            </div>
+                            <div class="overlay"></div>
+                            <a href="#" data-toggle="modal" modal="same"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mt">
+                        <div class="div">
+                            <div class="div-img"><img src="{{ asset('assets/img/article_4.jpg') }}"></div>
+                            <div class="div-txt">
+                                <h2 class="mini">LAS RESPUESTAS INTELIGENTES DE GMAIL YA ESTÁN DISPONIBLES EN ESPAÑOL!</h2>
+                                <p>ARTURO GOGA X JULIO 25, 2017</p>
+                            </div>
+                            <div class="overlay"></div>
+                            <a href="#" data-toggle="modal" modal="same"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 lt">
+                        <div class="div">
+                            <div class="div-img"><img src="{{ asset('assets/img/article_5.jpg') }}"></div>
+                            <div class="div-txt">
+                                <h2 class="mini">MOTO G5 PLUS UNBOXING (VIDEO)</h2>
+                                <p>ARTURO GOGA X JULIO 25, 2017</p>
+                            </div>
+                            <div class="overlay"></div>
+                            <a href="#" data-toggle="modal" modal="same"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="carousel slide margin-tb" data-ride="carousel" id="myCarousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active" data-interval="2000"><img src="{{ asset('assets/img/slide_1.jpg') }}" alt="Banner Imagen"></div>
+                        <div class="item" data-interval="1"><img src="{{ asset('assets/img/slide_2.jpg') }}" alt="Banner Imagen"></div>
+                    </div>
+                    <div>
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <i class="glyphicon glyphicon-chevron-right"></i>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin blue" id="videos">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row margin-tb">
+                    <div class="col-sm-7">
+                        <div class="videoWrapper">
+                            <iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/k_cFeI_2gL4?rel=0" class="videoYoutube"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <h2 class="tit-video">Kazunori Yamauchi, el genio detrás de Gran Turismo [FayerWayer TV] </h2>
+                        <h4 class="desc-video">El creador de una de los sagas más vendidos de PlayStation explica lo que significa mantenerse vigente en la industria de los videojuegos luego de 20 años. </h4></div>
+                </div>
+                <h3 class="more-videos">MÁS VIDEOS</h3>
+                <div class="owl-carousel owl-theme video">
+                    <div class="item">
+                        <a href="https://www.youtube.com/watch?v=k_cFeI_2gL4" class="youtube" title="Kazunori Yamauchi, el genio detrás de Gran Turismo [FayerWayer TV]" desc="El creador de una de los sagas más vendidos de PlayStation explica lo que significa mantenerse vigente en la industria de los videojuegos luego de 20 años."><img src="https://img.youtube.com/vi/k_cFeI_2gL4/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://www.youtube.com/watch?v=k_cFeI_2gL4" class="youtube" title="Kazunori Yamauchi, el genio detrás de Gran Turismo [FayerWayer TV]" desc="El creador de una de los sagas más vendidos de PlayStation explica lo que significa mantenerse vigente en la industria de los videojuegos luego de 20 años."><h4>Kazunori </h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.youtube.com/watch?v=v-YA1azChcI" class="youtube" title="Innecesario: El Podcast de FayerWayer" desc="Porque la tecnología que nos gusta es (a veces) innecesaria."><img src="https://img.youtube.com/vi/v-YA1azChcI/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://www.youtube.com/watch?v=v-YA1azChcI" class="youtube" title="Innecesario: El Podcast de FayerWayer" desc="Porque la tecnología que nos gusta es (a veces) innecesaria."><h4>Innecesario</h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.youtube.com/watch?v=vba0hJEs87c" class="youtube" title="Samsung y la vida después del Note 7 [FayerWayer TV]" desc="¿Cómo se resurge después de un problema de tal calibre?"><img src="https://img.youtube.com/vi/vba0hJEs87c/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://www.youtube.com/watch?v=vba0hJEs87c" class="youtube" title="Samsung y la vida después del Note 7 [FayerWayer TV]" desc="¿Cómo se resurge después de un problema de tal calibre?"><h4>Samsung </h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.youtube.com/watch?v=D6m3VAPTB2w" class="youtube" title="Fuimos a conocer el Galaxy S8 a Nueva York [FayerWayer TV]" desc="Ahora con un 100% menos de explosiones."><img src="https://img.youtube.com/vi/D6m3VAPTB2w/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://www.youtube.com/watch?v=D6m3VAPTB2w" class="youtube" title="Fuimos a conocer el Galaxy S8 a Nueva York [FayerWayer TV]" desc="Ahora con un 100% menos de explosiones."><h4>Galaxy S8</h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.youtube.com/watch?v=3ZKHc1srgSU" class="youtube" title="FayerWayer TV: Viajes con SpaceX, viajes con Uber, viajes con mutantes" desc="Diversión garantizada."><img src="https://img.youtube.com/vi/3ZKHc1srgSU/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://www.youtube.com/watch?v=3ZKHc1srgSU" class="youtube" title="FayerWayer TV: Viajes con SpaceX, viajes con Uber, viajes con mutantes" desc="Diversión garantizada."><h4>Viajes </h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/bpOSxM0rNPM" class="youtube" title="Do I Wanna Know?" desc="Arctic Monkeys"><img src="https://img.youtube.com/vi/bpOSxM0rNPM/0.jpg"></a>
+                        <div class="item-txt">
+                            <p>Paragraph</p><a href="https://youtu.be/bpOSxM0rNPM" class="youtube" title="FayerWayer TV: Viajes con SpaceX, viajes con Uber, viajes con mutantes" desc="Diversión garantizada."><h4>Viajes </h4></a>
+                            <p>Paragraph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row enlaces">
+                    <div class="col-sm-3 no-padding">
+                        <a href="#"><img class="img-responsive" src="{{ asset('assets/img/link_1.jpg') }}"></a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#"><img class="img-responsive" src="{{ asset('assets/img/link_2.jpg') }}"></a>
+                    </div>
+                    <div class="col-sm-3 no-padding">
+                        <a href="#"><img class="img-responsive" src="{{ asset('assets/img/link_1.jpg') }}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row blue no-margin articulos" id="blog">
+        <div class="col-md-12">
+            <div class="container margin-tb">
+                <h2>Te puede interesar</h2>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/articulo.jpg') }}" class="img-responsive" />
+                            <div class="art-div">
+                                <h3>Panasonic</h3>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <p>Se presenta en CES 2017 con innovaciones sorprendentes.</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p>Seguir leyendo <i class="fa fa-play"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/articulo.jpg') }}" class="img-responsive" />
+                            <div class="art-div">
+                                <h3>Panasonic</h3>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <p>Se presenta en CES 2017 con innovaciones sorprendentes.</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p>Seguir leyendo <i class="fa fa-play"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/articulo.jpg') }}" class="img-responsive" />
+                            <div class="art-div">
+                                <h3>Panasonic</h3>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <p>Se presenta en CES 2017 con innovaciones sorprendentes.</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p>Seguir leyendo <i class="fa fa-play"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12"><a href="{{ path('blog') }}"><h2>+ artículos</h2></a></div>
+                    <div class="col-sm-8 col-xs-12 mas-art">
+                        <p>Si quieres enterarte de todo lo que pasa en el mundo de la tecnología da clic y revisa nuestros artículos. Compuglobal a la vanguardia de la información que necesitas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin" id="capacitaciones">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row margin-tb">
+                    <div class="col-sm-8 eventos">
+                        <img class="img-responsive" src="{{ asset('assets/img/sec8.jpg') }}">
+                        <h2>Capacitaciones y Eventos</h2>
+                        <div class="sec8-eve">
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <marquee>
+                                        <span>Marqueee marquee marquee</span>
+                                    </marquee>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="{{ path('courses') }}">
+                                        <div class="info">
+                                            <h3 class="text-center">+ info</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 hp" id="tagmarketing">
+                        <div class="sec8-hp">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <a href="#">
+                                        <div class="info">
+                                            <h3>Tag Marketing</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#"><img class="img-responsive logo-tag" src="{{ asset('assets/img/logo-tag.png') }}">
+                            <img class="img-responsive back" src="{{ asset('assets/img/sec8-2.jpg') }}">
+                        </a>
+                        <marquee bgcolor="#464646">
+                            <span>Marquee marquee marquee</span>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row soluciones grey no-margin" id="soluciones">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <h2>Nuestras soluciones</h2></div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>Si quieres enterarte de todo lo que pasa en el mundo de la tecnología da clic y revisa nuestros artículos. Compuglobal a la vanguardia de la información.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="carousel slide" data-ride="carousel" id="carousel-2">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="row margin-tb">
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>videovigilancia </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_1.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>punto de venta</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_2.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>respaldo masivo</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_3.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>licenciamiento </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_4.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row margin-tb">
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>punto de venta</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_2.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>respaldo masivo</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_3.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>licenciamiento </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_4.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>videovigilancia </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_1.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row margin-tb">
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>respaldo masivo</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_3.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>licenciamiento </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_4.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>videovigilancia </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_1.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>punto de venta</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_2.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="row margin-tb">
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>licenciamiento </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_4.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>videovigilancia </h4><img class="img-responsive" src="{{ asset('assets/img/solutions_1.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>punto de venta</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_2.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-6">
+                                            <h4>respaldo masivo</h4><img class="img-responsive" src="{{ asset('assets/img/solutions_3.jpg') }}">
+                                            <div class="overlay"><a href="#" data-toggle="modal" modal="same"><h4>+ info</h4></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions">
+                                <a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev">
+                                    <i class="glyphicon glyphicon-chevron-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-2" role="button" data-slide="next">
+                                    <i class="glyphicon glyphicon-chevron-right"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container brands">
+                <h2>Nuestras marcas</h2>
+                <marquee class="margin-tb">
+                    <img src="{{ asset('assets/img/brand_hp.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_dell.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_tplink.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_complet.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_microsoft.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_intel.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_office.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_canon.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_kaspersky.png') }}" class="img-responsive"/>
+                    <img src="{{ asset('assets/img/brand_lenovo.png') }}" class="img-responsive"/>
+                </marquee>
+            </div>
+        </div>
+    </div>
+{% endblock %}

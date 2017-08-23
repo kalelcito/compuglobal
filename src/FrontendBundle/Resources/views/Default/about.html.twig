@@ -1,0 +1,90 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block nosotros %}
+    class="active"
+{% endblock %}
+
+{% block title %}{{ parent() }} | Nosotros{% endblock %}
+
+{% block body %}
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row nos-sec1">
+                    <div class="col-sm-8 nos-marquee">
+                        <div class="col-xs-5">
+                            <div class="info">
+                                <h3 class="text-center">Compuglobal</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <marquee bgcolor="#464646">
+                                <span>Marquee marquee marquee</span>
+                            </marquee>
+                        </div>
+                        <div class="col-xs-12">
+                            <img src="{{ asset('assets/img/nosotros.jpg') }}" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>Somos un proveedor Multimarca muy fuerte e importante de la industria de la tecnología de la información, con matriz sede en la ciudad de Toluca. Ofrecemos atención a grandes Corporativos y Gobierno, con atención y capacidad de
+                            entrega a nivel nacional a través de empresas de mensajería especializadas.</p>
+                        <h1>Somos </h1>
+                        <p>Especialistas en asesoría y comercialización de soluciones e infraestructura de cómputo, servidores de almacenamiento, consumibles, periféricos etc, así como la comercialización de Software administrativo, sistemas operativos,
+                            suites de productividad y software especializado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row mision">
+                    <div class="col-sm-3">
+                        <div class="nos-shadow">
+                            <div class="info">
+                                <h3>misión</h3></div>
+                            <div class="txt">
+                                <p>Especialistas en asesoría y comercialización de soluciones e infraestructura de cómputo, servidores de almacenamiento, consumibles, periféricos etc, así como la comercialización de Software administrativo, sistemas operativos,
+                                    suites de productividad y software especializado.</p>
+                            </div><img class="img-responsive" src="{{ asset('assets/img/mision.jpg') }}"></div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="nos-shadow">
+                            <div class="info">
+                                <h3>visión</h3></div>
+                            <div class="txt">
+                                <p>Especialistas en asesoría y comercialización de soluciones e infraestructura de cómputo, servidores de almacenamiento, consumibles, periféricos etc, así como la comercialización de Software administrativo, sistemas operativos,
+                                    suites de productividad y software especializado.</p>
+                            </div><img class="img-responsive" src="{{ asset('assets/img/vision.jpg') }}"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="nos-shadow">
+                            <div class="info">
+                                <h3>valores </h3></div>
+                            <div class="txt valores">
+                                <p><strong>Servicio:</strong> Siempre brindar respeto, la mejor atención y soporte a nuestros clientes internos y externos. "Tratar como nos gusta que nos traten"</p>
+                                <p><strong>Lealtad:</strong> Actuar siempre con ética y procurando el bien de la fuente de trabajo y de los que participan en ella.</p>
+                                <p><strong>Honestidad:</strong> Es el hábito que nos permite tratar a los demás en la misma forma, ser congruentes consigo mismo y los demás. "Lo que pienso, digo y hago tiene una sola Dirección"</p>
+                                <p><strong>Profesionalismo:</strong> Resaltar nuestras actividades con ética, eficiencia y competencia, para cumplir los compromisos con nuestros clientes y con la empresa, trabajando en equipo.</p>
+                                <p><strong>Responsabilidad:</strong> Asumir las tareas y actividades que se asignen y llevarlas a cabo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-margin margin-tb">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row certifications">
+                    <div class="col-xs-12">
+                        <div class="info">
+                            <h3>nuestras certificaciones</h3></div><img class="img-responsive" src="{{ asset('assets/img/brands.jpg') }}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

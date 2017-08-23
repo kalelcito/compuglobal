@@ -1,0 +1,94 @@
+{% extends '@Frontend/layout.html.twig' %}
+
+{% block title %}{{ parent() }} | Articulo{% endblock %}
+
+{% block body %}
+    <div class="row no-margin">
+        <div class="col-md-12">
+            <div class="container articulo">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h2>blog<span>Compuglobal </span></h2>
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+                        </script>
+                        <div class="fb-share-button" data-href="http://atestapp.com/compuglobal/" data-layout="button_count" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fatestapp.com%2Fcompuglobal%2F&amp;src=sdkpreparse">Compartir</a></div>
+                        <img class="img-responsive articulo-img" src="{{ asset('assets/img/blog_1.jpg') }}">
+                        <div id="content">
+                            <h2>La Tendencia Gaming</h2>
+                            <p>Miguel Hernández, Product Business Unit Manager PC &amp; Tablet de&nbsp;Acer Ibérica, cuenta a prnoticias cuáles van a ser las&nbsp;tendencias tecnológicas imperantes este año en el sector de la tecnología. “Un año muy interesante”,
+                                según el directivo, que asegura que en el segmento de los portátiles que giran sus pantallas 360º vamos a ver “nuevos factores de forma, es decir, nuevos diseños” que van creciendo y teniendo cada vez más pulgadas, que
+                                es lo que solicitan los usuarios. Sin olvidar un área en las que se van a presentar muchas novedades este año:&nbsp;la del&nbsp;<em>gaming</em>, ya que “se está hablando muchísimo de volver a jugar otra vez con el ordenador.
+                                Y esto es una realidad”. Además, esta tendencia no solo va a verse “en la parte del jugador puro, el que utiliza estos ordenadores bastante grandotes y muchísima potencia”, sino también en gamas más bajas, que ya cuentan
+                                con “potencia suficiente para poder jugar y hacernos pasar un buen rato”, añade Miguel Hernández. </p><img class="img-responsive" src="{{ asset('assets/img/blog_2.png') }}">
+                            <p class="margin-tb">Los usuarios demandan, además de estos portátiles con pantallas giratorias que pueden convertirse en tabletas, “modelos muy, muy ligeros, donde puedan llevar cuatro documentos dentro, que no pesen nada y que puedan conectar
+                                en cualquier momento y en cualquier lugar. La verdad es que el usuario español está siendo cada vez más exigente con nosotros y está haciendo que nos rompamos mucho la cabeza”, atestigua el&nbsp;Product Business Unit Manager
+                                PC &amp; Tablet de Acer Ibérica, que en esta entrevista también habla de los datos que baraja la compañía para este 2016. Así, indica que "calculamos crecer entre un 10 y un 12% en valor con respecto al año pasado”, añade
+                                el directivo, que también habla del futuro del sector en esta entrevista. </p>
+                            <p>Fuente: <a href="http://prnoticias.com/tecnologia/tendencias-de-tecnologia/20149681-tendencias-tech-2016-acer-gaming" target="_blank">Enlace </a></p>
+                        </div>
+                        <div id="comentarios">
+                            <h2>Danos tu opinión sobre este artículo.</h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label>NickName </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text">
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label>Mail </label>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <label>Opinión </label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <button class="btn btn-default btn-block" type="button">¡Listo! </button>
+                            </form>
+                            <div class="list-comment">
+                                <div class="comment">
+                                    <div class="col-xs-2"><img class="img-responsive" src="{{ asset('assets/img/user.png') }}"></div>
+                                    <div class="col-xs-10">
+                                        <h2>Usuario </h2></div>
+                                    <div class="col-xs-12">
+                                        <p>Comentario del Usuario</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <h2>+<span>artículos</span></h2>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <a href="{{ path('article',{'slug':'tendencia'}) }}">
+                                    <img class="img-responsive" src="{{ asset('assets/img/blog_1.jpg') }}">
+                                </a>
+                            </div>
+                            <div class="col-xs-8">
+                                <a href="{{ path('article',{'slug':'tendencia'}) }}">
+                                    <h3>La Tendencia Gaming</h3>
+                                    <p>Acer asegura que es el año del Gaming</p>
+                                </a>
+                            </div>
+                        </div><img class="img-responsive" src="{{ asset('assets/img/banner.jpg') }}" style="margin-top: 10px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
