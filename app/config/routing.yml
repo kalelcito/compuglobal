@@ -1,4 +1,17 @@
+logoutadmin:
+    path: /admin/logout
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
 frontend:
     resource: "@FrontendBundle/Controller/"
     type:     annotation
     prefix:   /
+
+core:
+    resource: "@CoreBundle/Controller/"
+    type:     annotation
+    prefix:   /core
