@@ -85,8 +85,18 @@ class Articulo
      */
     protected $updated_at;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Comentarios", mappedBy="articulo")
+     * @ORM\JoinColumn(name="id", referencedColumnName="articulo_id", nullable=false)
+     */
+    protected $comentarios;
+
     public function __construct()
     {
+    }
+
+    public function __toString() {
+        return $this->titulo;
     }
 
     /**
@@ -363,6 +373,42 @@ class Articulo
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    /**
+     * Add Comentarios entity to collection (one to many).
+     *
+     * @param \CoreBundle\Entity\Comentarios $comentarios
+     * @return \CoreBundle\Entity\Articulo
+     */
+    public function addComentarios(Comentarios $comentarios)
+    {
+        $this->comentarios[] = $comentarios;
+
+        return $this;
+    }
+
+    /**
+     * Remove Comentarios entity from collection (one to many).
+     *
+     * @param \CoreBundle\Entity\Comentarios $comentarios
+     * @return \CoreBundle\Entity\Articulo
+     */
+    public function removeComentarios(Comentarios $comentarios)
+    {
+        $this->comentarios->removeElement($comentarios);
+
+        return $this;
+    }
+
+    /**
+     * Get Comentarios entity collection (one to many).
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComentarios()
+    {
+        return $this->comentarios;
     }
 
     public function __sleep()

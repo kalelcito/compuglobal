@@ -1,0 +1,49 @@
+{% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+    {{ include('@Admin/partials/navegacion.html.twig',{'menu':'Compuglobal','submenu':'Contacto'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.js') }}"></script><script>
+    $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Contacto</h3>
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>No.</th> <th>Nombre</th>  <th>Correo</th>  <th>Comentarios</th>  <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 1 %}
+                    {% for contacto in contactos %}
+                        <tr>
+                            <td>{{ i }}</td> <td>{{ contacto.nombre }}</td> <td>{{ contacto.email }}</td> <td>{{ contacto.comentarios }}</td>          <td>
+                                <div class="btn-group btn-group-xs">
+                                    <a href="{{ path('contactos_show', { 'id': contacto.id }) }}" data-toggle="tooltip" title="Ver" class="btn btn-default"><i class="fa fa-list-ul"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% set i=i+1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

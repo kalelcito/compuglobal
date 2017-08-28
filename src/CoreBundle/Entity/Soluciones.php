@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * CoreBundle\Entity\Soluciones
  *
  * @ORM\Entity()
- * @ORM\Table(name="soluciones")
+ * @ORM\Table(name="soluciones", indexes={@ORM\Index(name="fk_soluciones_modals1_idx", columns={"modals_id"})})
  */
 class Soluciones
 {
@@ -52,6 +52,12 @@ class Soluciones
      * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Modals", inversedBy="soluciones")
+     * @ORM\JoinColumn(name="modals_id", referencedColumnName="id", nullable=false)
+     */
+    protected $modals;
 
     public function __construct()
     {
@@ -195,8 +201,31 @@ class Soluciones
         return $this->updated_at;
     }
 
+    /**
+     * Set Modals entity (many to one).
+     *
+     * @param \CoreBundle\Entity\Modals $modals
+     * @return \CoreBundle\Entity\Soluciones
+     */
+    public function setModals(Modals $modals = null)
+    {
+        $this->modals = $modals;
+
+        return $this;
+    }
+
+    /**
+     * Get Modals entity (many to one).
+     *
+     * @return \CoreBundle\Entity\Modals
+     */
+    public function getModals()
+    {
+        return $this->modals;
+    }
+
     public function __sleep()
     {
-        return array('id', 'imagen', 'titulo', 'activo', 'created_at', 'updated_at');
+        return array('id', 'modals_id', 'imagen', 'titulo', 'activo', 'created_at', 'updated_at');
     }
 }

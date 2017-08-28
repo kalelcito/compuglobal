@@ -53,7 +53,7 @@
                             {%- elseif metadata.type in ['array'] %}
                                 <td>{{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}{{ ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ '|join(\', \') }}{% endif %}' }}</td>
                             {%- elseif metadata.type in ['boolean'] %}
-                                <td>{{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}Sí{% else %}No{% endif %}' }}</td>
+                                <td>{{ '{{  ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ '|sino }}' }}</td>
                             {%- else %}
                                 <td>{{ '{{ ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' }}' }}</td>
                             {%- endif %}

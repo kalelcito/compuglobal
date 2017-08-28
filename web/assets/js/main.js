@@ -17,12 +17,6 @@ $(document).ready(function(){
         }
       });
     
-    //modals
-    $('a[data-toggle="modal"]').click(function(){
-        var name = $(this).attr("modal");
-        $('#'+name).modal('show');
-    });
-    
     //intervals carousel-1
     $('#myCarousel').on('slide.bs.carousel', function() {
       var interval = $('div.item.active').attr('data-interval');
@@ -58,9 +52,7 @@ $(document).ready(function(){
     //change youtube video
     $('.youtube').click(function(e){
         e.preventDefault();
-        var url = $(this).attr('href');
-        var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-        var id = videoid[1];
+        var id = $(this).attr('yt');
         $('.videoYoutube').attr('src',"https://www.youtube.com/embed/"+id+"?rel=0");
         $('.tit-video').text($(this).attr('title'));
         $('.desc-video').text($(this).attr('desc'));
@@ -83,11 +75,6 @@ $(document).ready(function(){
         $('.tecnologia-carousel .carousel').carousel($(this).attr('data-slide'));
     });
     
-    //products
-    $('.over,.over2').click(function(){
-        $('#pedido').modal('show');
-    });
-    
     //sum
     $('.quantity:input').bind('keyup mouseup',function(){
         var x = $(this).val();
@@ -104,14 +91,50 @@ $(document).ready(function(){
         var total = 0;
         $('#pedido .resume h2').text('$ '+total.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
     });
-    $('.finish').click(function(){
-        $('#pedido').modal('hide');
-        $('#gracias').modal('show');
-    });
     
     //carousel cursos
     $('.cursos-marquee h4').click(function(){
         $('.cursos-carousel').carousel($(this).attr('data-slide'));
+    });
+
+    //modal rules
+    $("*[data-toggle='modal'][act]").click(function (e) {
+        e.preventDefault();
+        var id = $(this).attr('modal');
+        String.prototype.filename=function(){
+            var s= this.replace(/\\/g, '/');
+            s= s.substring(s.lastIndexOf('/')+ 1);
+            return s;
+        }
+        var img = $('#imagenmodal').attr('src').filename();
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('act'),
+            data: {id:id},
+            success: function (data) {
+                $('#titulomodal').html(data.titulo);
+                $('#descripcionmodal').html(data.descripcion);
+                var src = $('#imagenmodal').attr("src").replace(img, data.imagen);
+                $('#imagenmodal').attr('src',src);
+                $('#modal').modal('show');
+            }
+        });
+    });
+
+    //modals
+    $('a[data-toggle="modal"]').click(function(){
+        var name = $(this).attr("modal");
+        $('#'+name).modal('show');
+    });
+
+    //products
+    $('.over,.over2').click(function(){
+        $('#pedido').modal('show');
+    });
+
+    $('.finish').click(function(){
+        $('#pedido').modal('hide');
+        $('#gracias').modal('show');
     });
     
     //modals cursos

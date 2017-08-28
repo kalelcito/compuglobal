@@ -9,8 +9,25 @@
             <div class="container">
                 <div class="carousel slide margin-tb" data-ride="carousel" id="myCarousel">
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active" data-interval="2000"><img src="{{ asset('assets/img/slide_1.jpg') }}" alt="Banner Promociones"></div>
-                        <div class="item" data-interval="1"><img src="{{ asset('assets/img/slide_2.jpg') }}" alt="Banner Promociones"></div>
+                        {% for ban in banners %}
+                            {% if loop.first %}
+                                <div class="item active" data-interval="2000">
+                                    {% if ban.enlace == '' %}
+                                        <img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen">
+                                    {% else %}
+                                        <a href="{{ ban.enlace }}"><img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen"></a>
+                                    {% endif %}
+                                </div>
+                            {% else %}
+                                <div class="item" data-interval="1">
+                                    {% if ban.enlace == '' %}
+                                        <img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen">
+                                    {% else %}
+                                        <a href="{{ ban.enlace }}"><img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen"></a>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div><a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button"
                                                                                                                                                                                                          data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
@@ -23,11 +40,12 @@
             <div class="container marquee-promos">
                 <div class="col-xs-9 no-padding">
                     <marquee>
-                        <span>marquee</span>
-                        <span>marquee</span>
-                        <span>marquee</span>
-                        <span>marquee</span>
-                        <span>marquee</span>
+                        {% for marquee in marquee %}
+                            <span>{{ marquee.texto }}</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                        {% endfor %}
                     </marquee>
                 </div>
                 <div class="col-xs-3 no-padding">

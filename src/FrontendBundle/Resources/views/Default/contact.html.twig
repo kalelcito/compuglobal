@@ -4,6 +4,30 @@
     class="active"
 {% endblock %}
 
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('admin/plugins/bower_components/sweetalert/sweetalert.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('admin/plugins/bower_components/sweetalert/sweetalert.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            {% if enviado==1 %}
+            swal({
+                title: "Gracias!",
+                text: "Pronto nos pondremos en Contacto contigo.",
+                type: "success"
+            });
+            $('#contacto_nombre').val('');
+            $('#contacto_empresa').val('');
+            $('#contacto_email').val('');
+            $('#contacto_telefono').val('');
+            $('#contacto_comentarios').val('');
+            {% endif %}
+        });
+    </script>
+{% endblock %}
+
 {% block title %}{{ parent() }} | Contacto{% endblock %}
 
 {% block body %}
@@ -12,14 +36,54 @@
             <div class="container contacto">
                 <h1 class="text-center">Contáctanos </h1>
                 <div class="col-md-8 col-md-offset-2">
-                    <form>
-                        <input class="form-control" type="text" placeholder="Nombre">
-                        <input class="form-control" type="text" placeholder="Empresa">
-                        <input class="form-control" type="email" placeholder="E-mail">
-                        <input class="form-control" type="tel" placeholder="Teléfono">
-                        <textarea class="form-control" rows="5" placeholder="Comentarios"></textarea>
-                        <button class="btn btn-default" type="submit">Enviar </button>
-                    </form>
+                    {{ form_start(form,  {'action':path('contact')}) }}
+
+                        {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
+                        {% if form.nombre.vars.errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in form.nombre.vars.errors %}
+                                    {{ error.message }} <br/>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        {{ form_widget(form.empresa, {'attr': {'class': 'form-control'} }) }}
+                        {% if form.empresa.vars.errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in form.empresa.vars.errors %}
+                                    {{ error.message }} <br/>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                        {% if form.email.vars.errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in form.email.vars.errors %}
+                                    {{ error.message }} <br/>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        {{ form_widget(form.telefono, {'attr': {'class': 'form-control '} }) }}
+                        {% if form.telefono.vars.errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in form.telefono.vars.errors %}
+                                    {{ error.message }} <br/>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        {{ form_widget(form.comentarios, {'attr': {'class': 'form-control '} }) }}
+                        {% if form.comentarios.vars.errors|length > 0 %}
+                            <p class="help-block">
+                                {% for error in form.comentarios.vars.errors %}
+                                    {{ error.message }} <br/>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                        <button class="btn btn-default" type="submit">Enviar</button>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

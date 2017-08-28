@@ -1,3 +1,51 @@
+core_curso:
+    resource: "@AdminBundle/Controller/CursoController.php"
+    type:     annotation
+
+core_imagen_sin_enlace:
+    resource: "@AdminBundle/Controller/ImagenSinEnlaceController.php"
+    type:     annotation
+
+core_comentarios:
+    resource: "@AdminBundle/Controller/ComentariosController.php"
+    type:     annotation
+
+core_articulo:
+    resource: "@AdminBundle/Controller/ArticuloController.php"
+    type:     annotation
+
+core_soluciones:
+    resource: "@AdminBundle/Controller/SolucionesController.php"
+    type:     annotation
+
+core_articulo_simple:
+    resource: "@AdminBundle/Controller/ArticuloSimpleController.php"
+    type:     annotation
+
+core_modals:
+    resource: "@AdminBundle/Controller/ModalsController.php"
+    type:     annotation
+
+core_imagen_enlace:
+    resource: "@AdminBundle/Controller/ImagenEnlaceController.php"
+    type:     annotation
+
+core_videos:
+    resource: "@AdminBundle/Controller/VideosController.php"
+    type:     annotation
+
+core_banners:
+    resource: "@AdminBundle/Controller/BannersController.php"
+    type:     annotation
+
+core_marquees:
+    resource: "@AdminBundle/Controller/MarqueesController.php"
+    type:     annotation
+
+core_administradores:
+    resource: "@AdminBundle/Controller/AdministradoresController.php"
+    type:     annotation
+
 logoutadmin:
     path: /admin/logout
 

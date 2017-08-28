@@ -37,7 +37,7 @@
                                     {%- elseif metadata.type in ['array'] %}
                                         {{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}{{ ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ '|join(\', \') }}{% endif %}' }}
                                     {%- elseif metadata.type in ['boolean'] %}
-                                        {{ '{% if ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' %}Yes{% else %}No{% endif %}' }}
+                                        {{ '{{  ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ '|sino }}' }}
                                     {%- else %}
                                         {{ '{{ ' ~ entity_singularized ~ '.' ~ field|replace({'_': ''}) ~ ' }}' }}
                                     {%- endif %}

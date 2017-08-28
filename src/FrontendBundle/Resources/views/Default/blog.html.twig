@@ -10,70 +10,25 @@
 <div class="row no-margin">
     <div class="col-md-12">
         <div class="container blog-page">
-            <h2 class="text-center">Artículos </h2>
-            <div class="row blog-row">
+            <h2 class="text-center">Artículos</h2>
+            {% for item in articulos %}
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
+                        <a href="{{ path('article',{'slug':item.slug}) }}">
+                            <img class="img-responsive blog-img" src="{{ asset('uploads/images/'~item.imagen) }}">
+                        </a>
+                        <a href="{{ path('article',{'slug':item.slug}) }}">
+                            <h3>{{ item.titulo }}</h3>
+                        </a>
+                        <p>{{ item.descripcion }}</p>
+                        <p>Publicado: {{ item.updatedAt|localizeddate('long','none','es') }}
+                            <a href="{{ path('article',{'slug':item.slug}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
-                        </p>
-                    </div>
-                </div><div class="col-md-4 col-sm-6">
-                    <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row blog-row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
-                        </p>
-                    </div>
-                </div><div class="col-md-4 col-sm-6">
-                    <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
-                        </p>
-                    </div>
-                </div><div class="col-md-4 col-sm-6">
-                    <div class="blog-item shadow-dark">
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><img class="img-responsive blog-img" src="{{ asset('assets/img/blog_1.jpg') }}"></a>
-                        <a href="{{ path('article',{'slug':'tendencia'}) }}"><h3>La Tendencia Gaming</h3></a>
-                        <p>Acer asegura que es el año del Gaming</p>
-                        <p>Publicado: vie 19 de mayo 2017
-                            <a href="{{ path('article',{'slug':'tendencia'}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
             <div class="row margin-tb">
-                <div class="col-xs-12"><img class="img-responsive" src="{{ asset('assets/img/banner.jpg') }}"></div>
+                <div class="col-xs-12"><img class="img-responsive" src="{{ asset('uploads/images/'~img.imagen) }}"></div>
             </div>
         </div>
     </div>

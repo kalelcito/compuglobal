@@ -11,12 +11,12 @@
                         <h3>cursos y capacitaciones</h3></div>
                     <div class="col-xs-6">
                         <marquee>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
+                            {% for marquee in marquee %}
+                                <span>{{ marquee.texto }}</span>
+                                <span>&nbsp;</span>
+                                <span>&nbsp;</span>
+                                <span>&nbsp;</span>
+                            {% endfor %}
                         </marquee>
                     </div>
                 </div>

@@ -17,6 +17,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/egeloen/ckeditor-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/egeloen/json-builder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gedmo/doctrine-extensions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
@@ -39,6 +41,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extensions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -73,6 +76,8 @@
           <root url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+          <root url="file://$MODULE_DIR$/vendor/egeloen/ckeditor-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/egeloen/json-builder" />
           <root url="file://$MODULE_DIR$/vendor/gedmo/doctrine-extensions" />
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
@@ -95,6 +100,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/vendor/twig/extensions" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
         </CLASSES>
         <SOURCES>
@@ -111,6 +117,8 @@
           <root url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+          <root url="file://$MODULE_DIR$/vendor/egeloen/ckeditor-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/egeloen/json-builder" />
           <root url="file://$MODULE_DIR$/vendor/gedmo/doctrine-extensions" />
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
@@ -133,6 +141,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/vendor/twig/extensions" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
         </SOURCES>
       </library>

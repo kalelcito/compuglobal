@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * CoreBundle\Entity\Comentarios
  *
  * @ORM\Entity()
- * @ORM\Table(name="comentarios")
+ * @ORM\Table(name="comentarios", indexes={@ORM\Index(name="fk_comentarios_articulo1_idx", columns={"articulo_id"})})
  */
 class Comentarios
 {
@@ -53,6 +53,12 @@ class Comentarios
      * @ORM\Column(type="datetime", nullable=true)
      */
     protected $updated_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Articulo", inversedBy="comentarios")
+     * @ORM\JoinColumn(name="articulo_id", referencedColumnName="id", nullable=false)
+     */
+    protected $articulo;
 
     public function __construct()
     {
@@ -219,8 +225,31 @@ class Comentarios
         return $this->updated_at;
     }
 
+    /**
+     * Set Articulo entity (many to one).
+     *
+     * @param \CoreBundle\Entity\Articulo $articulo
+     * @return \CoreBundle\Entity\Comentarios
+     */
+    public function setArticulo(Articulo $articulo = null)
+    {
+        $this->articulo = $articulo;
+
+        return $this;
+    }
+
+    /**
+     * Get Articulo entity (many to one).
+     *
+     * @return \CoreBundle\Entity\Articulo
+     */
+    public function getArticulo()
+    {
+        return $this->articulo;
+    }
+
     public function __sleep()
     {
-        return array('id', 'nickname', 'email', 'comentario', 'activo', 'created_at', 'updated_at');
+        return array('id', 'articulo_id', 'nickname', 'email', 'comentario', 'activo', 'created_at', 'updated_at');
     }
 }

@@ -19,11 +19,16 @@
                         </div>
                         <div class="col-xs-7">
                             <marquee bgcolor="#464646">
-                                <span>Marquee marquee marquee</span>
+                                {% for marquee in marquee %}
+                                    <span>{{ marquee.texto }}</span>
+                                    <span>&nbsp;</span>
+                                    <span>&nbsp;</span>
+                                    <span>&nbsp;</span>
+                                {% endfor %}
                             </marquee>
                         </div>
                         <div class="col-xs-12">
-                            <img src="{{ asset('assets/img/nosotros.jpg') }}" class="img-responsive">
+                            <img src="{{ asset('uploads/images/'~img.imagen) }}" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-sm-4">

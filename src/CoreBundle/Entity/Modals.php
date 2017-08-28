@@ -41,7 +41,7 @@ class Modals
     protected $titulo;
 
     /**
-     * @ORM\Column(type="string", length=150, nullable=true)
+     * @ORM\Column(type="string", length=400, nullable=true)
      */
     protected $descripcion;
 
@@ -83,9 +83,20 @@ class Modals
      */
     protected $articuloSimples;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Soluciones", mappedBy="modals")
+     * @ORM\JoinColumn(name="id", referencedColumnName="modals_id", nullable=false)
+     */
+    protected $soluciones;
+
     public function __construct()
     {
         $this->articuloSimples = new ArrayCollection();
+        $this->soluciones = new ArrayCollection();
+    }
+
+    public function __toString() {
+        return $this->titulo;
     }
 
     /**
@@ -352,6 +363,42 @@ class Modals
     public function getArticuloSimples()
     {
         return $this->articuloSimples;
+    }
+
+    /**
+     * Add Soluciones entity to collection (one to many).
+     *
+     * @param \CoreBundle\Entity\Soluciones $soluciones
+     * @return \CoreBundle\Entity\Modals
+     */
+    public function addSoluciones(Soluciones $soluciones)
+    {
+        $this->soluciones[] = $soluciones;
+
+        return $this;
+    }
+
+    /**
+     * Remove Soluciones entity from collection (one to many).
+     *
+     * @param \CoreBundle\Entity\Soluciones $soluciones
+     * @return \CoreBundle\Entity\Modals
+     */
+    public function removeSoluciones(Soluciones $soluciones)
+    {
+        $this->soluciones->removeElement($soluciones);
+
+        return $this;
+    }
+
+    /**
+     * Get Soluciones entity collection (one to many).
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSoluciones()
+    {
+        return $this->soluciones;
     }
 
     public function __sleep()

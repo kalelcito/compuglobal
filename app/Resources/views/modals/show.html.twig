@@ -1,0 +1,78 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'Compuglobal','submenu':'Modals'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script src="{{ asset('admin/js/jasny-bootstrap.js') }}"></script>
+{% endblock %}
+
+    {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Ver Registro</h3>                <form class="form-horizontal" role="form">                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Id</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ modal.id }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tipo</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ modal.tipo|modal }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Imagen</label>
+                            <div class="col-sm-10">
+                                <img src="{{ asset('uploads/images/'~modal.imagen) }}" class="img-responsive" width="100%">
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Titulo</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ modal.titulo }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Descripcion</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ modal.descripcion }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Texto alternativo (Solo para modals Especiales)</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ modal.textoalternativo }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Imagen alternativa (Solo para modals Especiales)</label>
+                            <div class="col-sm-10">
+                                <img src="{{ asset('uploads/images/'~modal.imagenalternativa) }}" class="img-responsive" width="100%">
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Activo</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{  modal.activo|sino }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Creado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if modal.createdat %}{{ modal.createdat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Actualizado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if modal.updatedat %}{{ modal.updatedat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                    <div class="form-group m-b-0">
+                        <div class="col-sm-12">
+                                                                    <a class="btn btn-inverse waves-effect waves-light m-t-10" style="float:left; margin:5px;" href="{{ path('modals_index') }}">Regresar</a>            <a class="btn btn-info waves-effect waves-light m-t-10" style="float:left;  margin:5px;"  href="{{ path('modals_edit', { 'id': modal.id }) }}">Editar</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

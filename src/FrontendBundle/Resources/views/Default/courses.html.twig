@@ -11,12 +11,12 @@
                         <h3>cursos y capacitaciones</h3></div>
                     <div class="col-xs-6">
                         <marquee>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
-                            <span>marquee</span>
+                            {% for marquee in marquee %}
+                                <span>{{ marquee.texto }}</span>
+                                <span>&nbsp;</span>
+                                <span>&nbsp;</span>
+                                <span>&nbsp;</span>
+                            {% endfor %}
                         </marquee>
                     </div>
                     <div class="col-xs-1">
@@ -28,8 +28,25 @@
                     <div class="col-md-12">
                         <div class="carousel slide cursos-carousel" data-ride="carousel">
                             <div class="carousel-inner" role="listbox">
-                                <div class="item active"><img class="img-responsive" src="{{ asset('assets/img/cursos_slide_1.jpg') }}" alt="Banner Cursos"></div>
-                                <div class="item"><img class="img-responsive" src="{{ asset('assets/img/cursos_slide_2.jpg') }}" alt="Banner Cursos"></div>
+                                {% for ban in banners %}
+                                    {% if loop.first %}
+                                        <div class="item active" data-interval="2000">
+                                            {% if ban.enlace == '' %}
+                                                <img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen">
+                                            {% else %}
+                                                <a href="{{ ban.enlace }}"><img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen"></a>
+                                            {% endif %}
+                                        </div>
+                                    {% else %}
+                                        <div class="item" data-interval="1">
+                                            {% if ban.enlace == '' %}
+                                                <img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen">
+                                            {% else %}
+                                                <a href="{{ ban.enlace }}"><img src="{{ asset('uploads/images/'~ban.imagen) }}" alt="Banner Imagen"></a>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -41,10 +58,11 @@
         <div class="col-md-12">
             <div class="container cursos">
                 <div class="row">
-                    <div class="col-sm-6" style="background: rgb(36,36,36);" data-toggle="modal" modal="same">
-                        <h3>EMPODERA A TU EQUIPO DE TRABAJO</h3>
-                        <p>Invierte en la preparación de tu equipo de trabajo, ellos harán más rentable tu negocio.</p>
-                        <h2>&lt; ¿POR QUÉ HACERLO? &gt;</h2></div>
+                    <div class="col-sm-6" style="background: rgb(36,36,36);" data-toggle="modal" modal="{{ chico.id }}" act="{{ path('modalDB') }}">
+                        <h3>{{ chico.titulo }}</h3>
+                        <p>{{ chico.descripcion }}</p>
+                        <h2>{{ chico.textoAlternativo }}</h2>
+                    </div>
                     <a href="{{ path('course',{'slug':'curso'}) }}">
                         <div class="col-sm-2" style="background: rgb(194,6,5);">
                             <h4>9 de Septiembre</h4>
@@ -107,12 +125,14 @@
         <div class="col-md-12">
             <div class="container manager">
                 <div class="row">
-                    <div class="col-sm-5" data-toggle="modal" modal="same"><img class="img-responsive" src="{{ asset('assets/img/manager.jpg') }}"></div>
+                    <div class="col-sm-5" data-toggle="modal" modal="{{ grande.id }}" act="{{ path('modalDB') }}">
+                        <img class="img-responsive" src="{{ asset('uploads/images/'~grande.imagenAlternativa) }}">
+                    </div>
                     <div class="col-sm-7">
                         <div class="manager-div">
-                            <h1>EL GERENTE ES LA CLAVE</h1>
-                            <p>Definamos que es un coach, es aquella persona facilitadora del aprendizaje que estímula la toma de conciencia, la visión integral de los hechos y la acción desde estrategias efectivas y diferentes...</p>
-                            <h3 data-toggle="modal" modal="same">VER MÁS ACERCA DE ESTE ARTÍCULO &gt;&gt;</h3>
+                            <h1>{{ grande.titulo }}</h1>
+                            <p>{{ grande.descripcion }}</p>
+                            <h3 data-toggle="modal" modal="{{ grande.id }}" act="{{ path('modalDB') }}">{{ grande.textoAlternativo }}</h3>
                         </div>
                     </div>
                 </div>

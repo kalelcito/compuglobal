@@ -26,6 +26,11 @@ class Videos
     protected $link_youtube;
 
     /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    protected $youtube_id;
+
+    /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     protected $titulo;
@@ -107,6 +112,29 @@ class Videos
     public function getLinkYoutube()
     {
         return $this->link_youtube;
+    }
+
+    /**
+     * Set the value of youtube_id.
+     *
+     * @param string $youtube_id
+     * @return \CoreBundle\Entity\Videos
+     */
+    public function setYoutubeId($youtube_id)
+    {
+        $this->youtube_id = $youtube_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of youtube_id.
+     *
+     * @return string
+     */
+    public function getYoutubeId()
+    {
+        return $this->youtube_id;
     }
 
     /**
@@ -249,6 +277,6 @@ class Videos
 
     public function __sleep()
     {
-        return array('id', 'link_youtube', 'titulo', 'descripcion', 'orden', 'activo', 'created_at', 'updated_at');
+        return array('id', 'link_youtube', 'youtube_id', 'titulo', 'descripcion', 'orden', 'activo', 'created_at', 'updated_at');
     }
 }
