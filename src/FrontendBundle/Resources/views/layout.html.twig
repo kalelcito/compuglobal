@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:url" content="{{ absolute_url(path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params'))) }}"/>
     {% block opengraph %}{% endblock %}
-
+    <!-- TODO revisar facebook -->
     <title>{% block title %}Compuglobal{% endblock %}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/icon.png') }}">
 

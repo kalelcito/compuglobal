@@ -1,5 +1,13 @@
 {% extends '@Frontend/layout.html.twig' %}
 
+{% block opengraph %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Blog | Compuglobal" />
+    <meta property="og:description" content="Enterate de todo lo que pasa en el mundo de la tecnología. Compuglobal a
+    la vanguardia de la información que necesitas." />
+    <meta property="og:image" content="{{ absolute_url(asset('uploads/images/'~img.imagen)) }}" />
+{% endblock %}
+
 {% block publicaciones %}
     class="active"
 {% endblock %}

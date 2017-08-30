@@ -4,6 +4,14 @@
     class="active"
 {% endblock %}
 
+{% block opengraph %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Nosotros | Compuglobal" />
+    <meta property="og:description" content="Somos un proveedor Multimarca muy fuerte e importante de la industria de
+    la tecnología de la información, con matriz sede en la ciudad de Toluca." />
+    <meta property="og:image" content="{{ absolute_url(asset('uploads/images/'~img.imagen)) }}" />
+{% endblock %}
+
 {% block title %}{{ parent() }} | Nosotros{% endblock %}
 
 {% block body %}

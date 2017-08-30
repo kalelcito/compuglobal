@@ -1,5 +1,12 @@
 {% extends '@Frontend/layout.html.twig' %}
 
+{% block opengraph %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Contacto | Compuglobal" />
+    <meta property="og:description" content="Contactanos!" />
+    <meta property="og:image" content="{{ absolute_url(asset('uploads/images/logo.png')) }}" />
+{% endblock %}
+
 {% block contacto %}
     class="active"
 {% endblock %}

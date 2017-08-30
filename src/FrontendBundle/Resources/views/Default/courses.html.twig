@@ -1,5 +1,13 @@
 {% extends '@Frontend/layout.html.twig' %}
 
+{% block opengraph %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cursos y Capacitaciones | Compuglobal" />
+    <meta property="og:description" content="Invierte en la preparacion de tu equipo de trabajo, ellos haran mas
+    rentable tu negocio." />
+    <meta property="og:image" content="{{ absolute_url(asset('uploads/images/'~grande.imagenAlternativa)) }}" />
+{% endblock %}
+
 {% block title %}{{ parent() }} | Cursos{% endblock %}
 
 {% block body %}
