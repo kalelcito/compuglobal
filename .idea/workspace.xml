@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2fc35e-fd0c-4a42-86da-c7d377ffab96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inscripciones/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inscripciones/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/suscripciones/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/suscripciones/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AdminBundle/Controller/InscripcionesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AdminBundle/Controller/SuscripcionesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Form/InscripcionType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Form/PedidoType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Form/RegistroType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/mail/inscripcion.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/mail/pedido.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/mail/suscripcion.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/partials/registro.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.es.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/curso/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/curso/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/curso/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/curso/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/curso/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/curso/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminBundle/Controller/CursoController.php" afterPath="$PROJECT_DIR$/src/AdminBundle/Controller/CursoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/AdminBundle/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Categoria.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Categoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Curso.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Curso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Inscripciones.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Inscripciones.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Pedidos.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Pedidos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Productos.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Productos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Entity/Suscripcion.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Entity/Suscripcion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Form/CursoType.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Form/CursoType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoreBundle/Twig/CoreExtension.php" afterPath="$PROJECT_DIR$/src/CoreBundle/Twig/CoreExtension.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/FrontendBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Controller/partialsController.php" afterPath="$PROJECT_DIR$/src/FrontendBundle/Controller/partialsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/blog.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/blog.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/course.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/course.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/courses.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/courses.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/promotions.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/Default/promotions.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/FrontendBundle/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/doctrine" afterPath="$PROJECT_DIR$/vendor/bin/doctrine" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/doctrine-dbal" afterPath="$PROJECT_DIR$/vendor/bin/doctrine-dbal" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/doctrine.php" afterPath="$PROJECT_DIR$/vendor/bin/doctrine.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/security-checker" afterPath="$PROJECT_DIR$/vendor/bin/security-checker" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/simple-phpunit" afterPath="$PROJECT_DIR$/vendor/bin/simple-phpunit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/css/style.css" afterPath="$PROJECT_DIR$/web/admin/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/styles.css" afterPath="$PROJECT_DIR$/web/assets/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/js/main.js" afterPath="$PROJECT_DIR$/web/assets/js/main.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -365,12 +324,12 @@
       <workItem from="1503672414913" duration="10562000" />
       <workItem from="1503934997404" duration="20782000" />
       <workItem from="1504018975306" duration="22564000" />
-      <workItem from="1504106162596" duration="6262000" />
+      <workItem from="1504106162596" duration="6430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112099000" />
+    <option name="totallyTimeSpent" value="112267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="62" width="1469" height="829" extended-state="0" />
