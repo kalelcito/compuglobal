@@ -1,3 +1,19 @@
+core_pedidos:
+    resource: "@AdminBundle/Controller/PedidosController.php"
+    type:     annotation
+
+core_productos:
+    resource: "@AdminBundle/Controller/ProductosController.php"
+    type:     annotation
+
+core_categoria:
+    resource: "@AdminBundle/Controller/CategoriaController.php"
+    type:     annotation
+
+core_imagenes:
+    resource: "@AdminBundle/Controller/ImagenesController.php"
+    type:     annotation
+
 core_curso:
     resource: "@AdminBundle/Controller/CursoController.php"
     type:     annotation

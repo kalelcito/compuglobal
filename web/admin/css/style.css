@@ -13460,3 +13460,9 @@ ul.list-icons li i {
     width: 100%;
   }
 }
+
+.box-color {
+  height: 20px;
+  width: 20px;
+  border: 1px dashed black;
+}

@@ -4,6 +4,7 @@ namespace CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * CoreBundle\Entity\Inscripciones
@@ -22,16 +23,22 @@ class Inscripciones
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Assert\Length(min="4",minMessage="Tu nombre debe ser mayor a {{ limit }} caracteres")
+     * @Assert\NotBlank(message="Ingresa un Nombre")
      */
     protected $nombre;
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
+     * @Assert\Email(message="El correo electronico {{ value }} no es valido")
+     * @Assert\NotBlank(message="Ingresa un email")
      */
     protected $email;
 
     /**
      * @ORM\Column(type="string", length=15, nullable=true)
+     * @Assert\Length(min="7",minMessage="Ingresa un telefono de al menos {{ limit }} digitos")
+     * @Assert\NotBlank(message="Ingresa un telefono")
      */
     protected $telefono;
 

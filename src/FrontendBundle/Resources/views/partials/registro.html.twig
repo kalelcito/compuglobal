@@ -1,0 +1,14 @@
+{{ form_start(form,  {'action':path('registro')}) }}
+    <div class="col-sm-2">
+        <h3>Regístrate</h3></div>
+    <div class="col-sm-4">
+        {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="col-sm-4">
+        {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-default btn-block btn-register" type="submit" id="registro">Listo</button>
+    </div>
+{{ form_end(form) }}
+<div id="status-reg" style="display: none; color: white;"></div>

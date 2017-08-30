@@ -57,11 +57,11 @@
         <div class="col-md-12 productos">
             <div class="container computo margin-tb">
                 <div class="col-xs-6 hidden-sm hidden-md hidden-lg">
-                    <h4 class="text-center">Cómputo </h4></div>
+                    <h4 class="text-center" style="background: {{ categorias[0].color }};">{{ categorias[0].nombre }}</h4></div>
                 <div class="col-xs-2 controles">
                     <div class="row computo-controles">
                         <div class="col-md-8 hidden-xs no-padding">
-                            <h4 class="text-center">Cómputo </h4></div>
+                            <h4 class="text-center" style="background: {{ categorias[0].color }};">{{ categorias[0].nombre[:10] }}</h4></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">| </h3></a></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+ </h2></a></div>
                     </div>
@@ -69,126 +69,35 @@
                 <div class="col-sm-10 col-xs-12">
                     <div class="carousel slide computo-carousel" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                            {% set i = 0 %}
+                            {% for item in prod1 %}
+                                {% set t = loop.index-i %}
+                                {% if loop.first or t==1 %}
+                                    <div class="item {% if loop.first %}active{% endif %}">
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-sm-3 col-xs-6 lay">
+                                    <img class="img-responsive" src="{{ asset('uploads/images/'~item.imagen) }}">
+                                    <strong>{{ item.titulo }}</strong>
+                                    <p>{{ item.descripcion[:22] }}...</p>
+                                    <a href="#" sku="{{ item.sku }}" act="{{ path('skuDB') }}">
+                                        <div class="over" style="background: {{ categorias[0].color }};">
+                                            <p>{{ item.titulo }}</p>
+                                            <p>SKU: {{ item.sku }}</p>
+                                            <h2>$ {{ item.precio|number_format(2, '.', ',') }}</h2><small>pesos</small>
                                         </div>
                                         <div class="over2">
                                             <i class="fa fa-hand-o-up"></i>
                                             <h2>¡LO QUIERO!</h2>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
+                                {% if loop.last or loop.index is divisible by(4) %}
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    {% set i = i + 4 %}
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
                             <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
@@ -198,11 +107,11 @@
             </div>
             <div class="container computo margin-tb perifericos">
                 <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
-                    <h4 class="text-center">Periféricos </h4></div>
+                    <h4 class="text-center" style="background: {{ categorias[1].color }};">{{ categorias[1].nombre }}</h4></div>
                 <div class="col-sm-push-10 col-xs-2 controles">
                     <div class="row perifericos-controles">
                         <div class="col-md-8 hidden-xs no-padding">
-                            <h4 class="text-center">Periféricos </h4></div>
+                            <h4 class="text-center" style="background: {{ categorias[1].color }};">{{ categorias[1].nombre[:10] }}</h4></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">|</h3></a></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+</h2></a></div>
                     </div>
@@ -210,126 +119,37 @@
                 <div class="col-sm-10 col-sm-pull-2 col-xs-12">
                     <div class="carousel slide perifericos-carousel" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+
+                            {% set i = 0 %}
+                            {% for item in prod2 %}
+                                {% set t = loop.index-i %}
+                                {% if loop.first or t==1 %}
+                                    <div class="item {% if loop.first %}active{% endif %}">
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-sm-3 col-xs-6 lay peri">
+                                    <img class="img-responsive" src="{{ asset('uploads/images/'~item.imagen) }}">
+                                    <strong>{{ item.titulo }}</strong>
+                                    <p>{{ item.descripcion[:22] }}...</p>
+                                    <a href="#" sku="{{ item.sku }}" act="{{ path('skuDB') }}">
+                                        <div class="over" style="background: {{ categorias[0].color }};">
+                                            <p>{{ item.titulo }}</p>
+                                            <p>SKU: {{ item.sku }}</p>
+                                            <h2>$ {{ item.precio|number_format(2, '.', ',') }}</h2><small>pesos</small>
                                         </div>
                                         <div class="over2">
                                             <i class="fa fa-hand-o-up"></i>
                                             <h2>¡LO QUIERO!</h2>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
+                                {% if loop.last or loop.index is divisible by(4) %}
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay peri">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    {% set i = i + 4 %}
+                                {% endif %}
+                            {% endfor %}
+
                         </div>
                         <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
                             <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
@@ -339,11 +159,11 @@
             </div>
             <div class="container computo margin-tb impresoras">
                 <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
-                    <h4 class="text-center">Impresoras </h4></div>
+                    <h4 class="text-center" style="background: {{ categorias[2].color }};">{{ categorias[2].nombre }}</h4></div>
                 <div class="col-xs-2 controles">
                     <div class="row impresoras-controles">
                         <div class="col-md-8 hidden-xs no-padding">
-                            <h4 class="text-center">Impresoras </h4></div>
+                            <h4 class="text-center" style="background: {{ categorias[2].color }};">{{ categorias[2].nombre[:10] }}</h4></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">|</h3></a></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+</h2></a></div>
                     </div>
@@ -351,126 +171,35 @@
                 <div class="col-sm-10 col-xs-12">
                     <div class="carousel slide impresoras-carousel" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                            {% set i = 0 %}
+                            {% for item in prod3 %}
+                                {% set t = loop.index-i %}
+                                {% if loop.first or t==1 %}
+                                    <div class="item {% if loop.first %}active{% endif %}">
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-sm-3 col-xs-6 lay imp">
+                                    <img class="img-responsive" src="{{ asset('uploads/images/'~item.imagen) }}">
+                                    <strong>{{ item.titulo }}</strong>
+                                    <p>{{ item.descripcion[:22] }}...</p>
+                                    <a href="#" sku="{{ item.sku }}" act="{{ path('skuDB') }}">
+                                        <div class="over" style="background: {{ categorias[0].color }};">
+                                            <p>{{ item.titulo }}</p>
+                                            <p>SKU: {{ item.sku }}</p>
+                                            <h2>$ {{ item.precio|number_format(2, '.', ',') }}</h2><small>pesos</small>
                                         </div>
                                         <div class="over2">
                                             <i class="fa fa-hand-o-up"></i>
                                             <h2>¡LO QUIERO!</h2>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_1.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
+                                {% if loop.last or loop.index is divisible by(4) %}
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay imp">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_2.png') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    {% set i = i + 4 %}
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
                             <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
@@ -480,11 +209,11 @@
             </div>
             <div class="container computo margin-tb accesorios">
                 <div class="col-xs-6 hidden-sm hidden-md hidden-lg no-padding">
-                    <h4 class="text-center">Accesorios </h4></div>
+                    <h4 class="text-center" style="background: {{ categorias[3].color }};">{{ categorias[3].nombre[:10] }}</h4></div>
                 <div class="col-sm-push-10 col-xs-2 controles">
                     <div class="row accesorios-controles">
                         <div class="col-md-8 hidden-xs no-padding">
-                            <h4 class="text-center">Accesorios </h4></div>
+                            <h4 class="text-center" style="background: {{ categorias[3].color }};">{{ categorias[3].nombre[:10] }}</h4></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="prev"><h3 class="text-center">| </h3></a></div>
                         <div class="col-md-2 col-sm-6 no-padding"><a class="new-control" data-slide="next"><h2 class="text-center">+ </h2></a></div>
                     </div>
@@ -492,126 +221,35 @@
                 <div class="col-sm-10 col-sm-pull-2 col-xs-12">
                     <div class="carousel slide accesorios-carousel" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
+                            {% set i = 0 %}
+                            {% for item in prod4 %}
+                                {% set t = loop.index-i %}
+                                {% if loop.first or t==1 %}
+                                    <div class="item {% if loop.first %}active{% endif %}">
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-sm-3 col-xs-6 lay acc">
+                                    <img class="img-responsive" src="{{ asset('uploads/images/'~item.imagen) }}">
+                                    <strong>{{ item.titulo }}</strong>
+                                    <p>{{ item.descripcion[:22] }}...</p>
+                                    <a href="#" sku="{{ item.sku }}" act="{{ path('skuDB') }}">
+                                        <div class="over" style="background: {{ categorias[0].color }};">
+                                            <p>{{ item.titulo }}</p>
+                                            <p>SKU: {{ item.sku }}</p>
+                                            <h2>$ {{ item.precio|number_format(2, '.', ',') }}</h2><small>pesos</small>
                                         </div>
                                         <div class="over2">
                                             <i class="fa fa-hand-o-up"></i>
                                             <h2>¡LO QUIERO!</h2>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_3.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
+                                {% if loop.last or loop.index is divisible by(4) %}
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
                                     </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6 lay acc">
-                                        <img class="img-responsive" src="{{ asset('assets/img/product_4.jpg') }}">
-                                        <strong>Bold</strong>
-                                        <p>Paragraph</p>
-                                        <div class="over">
-                                            <p>Computadora HP x240</p>
-                                            <p>SKU: S45152</p>
-                                            <h2>$ 6,2500.00</h2><small>pesos</small>
-                                        </div>
-                                        <div class="over2">
-                                            <i class="fa fa-hand-o-up"></i>
-                                            <h2>¡LO QUIERO!</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    {% set i = i + 4 %}
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
                             <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
@@ -622,7 +260,7 @@
             <div class="container tecnologia">
                 <div class="row">
                     <div class="col-xs-6 no-padding tecnologia-controles">
-                        <h4>Toda la tecnología y mucho más</h4>
+                        <h4 class="text-center" style="background: {{ black[0].color }};">{{ black[0].nombre }}</h4>
                         <h3 class="text-center" data-slide="prev">-</h3>
                         <h2 class="text-center" data-slide="next">+</h2></div>
                 </div>
@@ -630,126 +268,35 @@
                     <div class="col-md-12">
                         <div class="carousel slide margin-tb" data-ride="carousel">
                             <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <div class="row">
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
+                                {% set i = 0 %}
+                                {% for item in blackprod %}
+                                    {% set t = loop.index-i %}
+                                    {% if loop.first or t==1 %}
+                                        <div class="item {% if loop.first %}active{% endif %}">
+                                        <div class="row">
+                                    {% endif %}
+                                    <div class="col-sm-3 col-xs-6 lay tech">
+                                        <img class="img-responsive" src="{{ asset('uploads/images/'~item.imagen) }}">
+                                        <strong>{{ item.titulo }}</strong>
+                                        <p>{{ item.descripcion[:22] }}...</p>
+                                        <a href="#" sku="{{ item.sku }}" act="{{ path('skuDB') }}">
+                                            <div class="over" style="background: {{ categorias[0].color }};">
+                                                <p>{{ item.titulo }}</p>
+                                                <p>SKU: {{ item.sku }}</p>
+                                                <h2>$ {{ item.precio|number_format(2, '.', ',') }}</h2><small>pesos</small>
                                             </div>
                                             <div class="over2">
                                                 <i class="fa fa-hand-o-up"></i>
                                                 <h2>¡LO QUIERO!</h2>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_5.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
+                                    {% if loop.last or loop.index is divisible by(4) %}
                                         </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
                                         </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-xs-6 lay tech">
-                                            <img class="img-responsive" src="{{ asset('assets/img/product_6.png') }}">
-                                            <strong>Bold</strong>
-                                            <p>Paragraph</p>
-                                            <div class="over">
-                                                <p>Computadora HP x240</p>
-                                                <p>SKU: S45152</p>
-                                                <h2>$ 6,2500.00</h2><small>pesos</small>
-                                            </div>
-                                            <div class="over2">
-                                                <i class="fa fa-hand-o-up"></i>
-                                                <h2>¡LO QUIERO!</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        {% set i = i + 4 %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="hidden"><a class="left carousel-control" href="#" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
                                 <a class="right carousel-control" href="#" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
@@ -786,13 +333,13 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Haz tu pedido</h4></div>
                 <div class="modal-body">
-                    <form>
+                    {{ form_start(form,  {'action':path('promotions')}) }}
                         <div class="row">
                             <div class="col-xs-3">
                                 <label>Nombre </label>
                             </div>
                             <div class="col-xs-9">
-                                <input class="form-control" type="text" required="" autofocus="">
+                                {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="row">
@@ -800,7 +347,7 @@
                                 <label>Mail </label>
                             </div>
                             <div class="col-xs-9">
-                                <input class="form-control" type="email" required="" autocomplete="off">
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="row">
@@ -808,31 +355,34 @@
                                 <label>Teléfono </label>
                             </div>
                             <div class="col-xs-9">
-                                <input class="form-control" type="text" required="" autofocus="">
+                                {{ form_widget(form.telefono, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="row resume">
                             <div class="col-xs-6">
-                                <h4>Computadora HP X240</h4>
-                                <h4>SKU 54H5H5</h4>
-                                <p class="text-justify">Procesador Ci7, Disco duro AMD A10, 8GB en Ram, DVD/RW.</p>
+                                <h4 id="prod-titulo"></h4>
+                                <h4 id="prod-sku"></h4>
+                                <p class="text-justify" id="prod-desc"></p>
                                 <strong>Precio Unitario IVA incluído</strong>
-                                <h4 class="precio">$ 6,250.00</h4></div>
+                                <h4 class="precio" id="prod-precio"></h4>
+                            </div>
                             <div class="col-xs-6">
-                                <input class="form-control quantity" type="number" min="0" step="1">
-                                <h3>Piezas(s) </h3>
+                                {{ form_widget(form.cantidad, {'attr': {'class': 'form-control quantity'} }) }}
+                                <h3>Piezas(s)</h3>
                                 <h2 class="text-right">$ 0.00</h2></div>
+                            {{ form_widget(form.sku, {'attr': {'class': 'hidden pedido-sku'} }) }}
+                            <div id="status-pedido" style="display: none; color: white;" class="col-xs-12"></div>
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <div class="col-xs-6">
-                        <button class="btn btn-default btn-block pedido-btn" type="button" data-dismiss="modal">Cancelar </button>
+                        <button class="btn btn-default btn-block pedido-btn" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
                     <div class="col-sm-6 col-xs-9">
-                        <button class="btn btn-primary btn-block pedido-btn finish" type="button">Realizar pedido</button>
+                        <a class="btn btn-primary btn-block pedido-btn finish">Realizar pedido</a>
                     </div>
                 </div>
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

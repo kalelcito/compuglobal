@@ -23,9 +23,9 @@
                                 <p class="form-control-static">                                        {{ curso.id }}                                </p>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Fecha</label>
+                            <label class="col-sm-2 control-label">Fecha del Curso</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {% if curso.fecha %}{{ curso.fecha|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                                <p class="form-control-static">                                        {% if curso.fecha %}{{ curso.fecha|date('Y-m-d') }}{% endif %}                                </p>
                             </div>
                         </div>                        <div class="form-group">
                             <label class="col-sm-2 control-label">Titulo</label>
@@ -35,32 +35,32 @@
                         </div>                        <div class="form-group">
                             <label class="col-sm-2 control-label">Imagen</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.imagen }}                                </p>
+                                <img src="{{ asset('uploads/images/'~curso.imagen) }}" class="img-responsive" width="100%">
                             </div>
                         </div>                        <div class="form-group">
                             <label class="col-sm-2 control-label">Precio</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.precio }}                                </p>
+                                <p class="form-control-static">                                        ${{ curso.precio|number_format(2, '.', ',') }}                                </p>
                             </div>
                         </div>                        <div class="form-group">
                             <label class="col-sm-2 control-label">Contenido</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.contenido }}                                </p>
+                                <p class="form-control-static">                                        {{ curso.contenido|raw }}                                </p>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Color_fondo</label>
+                            <label class="col-sm-2 control-label">Color Fondo</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.colorfondo }}                                </p>
+                                <div class="box-color" style="background: {{ curso.colorFondo }}"></div>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Color_titulo</label>
+                            <label class="col-sm-2 control-label">Color Titulo</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.colortitulo }}                                </p>
+                                <div class="box-color" style="background: {{ curso.colorTitulo }}"></div>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Color_fecha</label>
+                            <label class="col-sm-2 control-label">Color Fecha</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static">                                        {{ curso.colorfecha }}                                </p>
+                                <div class="box-color" style="background: {{ curso.colorFecha }}"></div>
                             </div>
                         </div>                        <div class="form-group">
                             <label class="col-sm-2 control-label">Activo</label>
@@ -83,12 +83,12 @@
                                 <p class="form-control-static">                                        {{ curso.metadesc }}                                </p>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Created_at</label>
+                            <label class="col-sm-2 control-label">Creado</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static">                                        {% if curso.createdat %}{{ curso.createdat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
                             </div>
                         </div>                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Updated_at</label>
+                            <label class="col-sm-2 control-label">Actualizado</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static">                                        {% if curso.updatedat %}{{ curso.updatedat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
                             </div>

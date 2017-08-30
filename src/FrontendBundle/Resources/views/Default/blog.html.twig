@@ -21,7 +21,7 @@
                             <h3>{{ item.titulo }}</h3>
                         </a>
                         <p>{{ item.descripcion }}</p>
-                        <p>Publicado: {{ item.updatedAt|localizeddate('long','none','es') }}
+                        <p>Publicado: {{ item.updatedAt|localizeddate('long','none','es',null,"eee d 'de' LLL yyyy") }}
                             <a href="{{ path('article',{'slug':item.slug}) }}"><img src="{{ asset('assets/img/plus.png') }}"></a>
                         </p>
                     </div>

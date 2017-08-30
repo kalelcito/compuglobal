@@ -18,6 +18,8 @@ class CoreExtension extends \Twig_Extension
             new \Twig_SimpleFilter('imagenEnlace', array($this, 'imagenEnlaceFilter'), array('is_safe' => array('html'))),
             new \Twig_SimpleFilter('imagensinEnlace', array($this, 'imagensinEnlaceFilter'), array('is_safe' => array('html'))),
             new \Twig_SimpleFilter('modal', array($this, 'modalsFilter'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFilter('categoria', array($this, 'categoriaFilter'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFilter('pedido', array($this, 'pedidoFilter'), array('is_safe' => array('html'))),
         );
     }
 
@@ -105,6 +107,32 @@ class CoreExtension extends \Twig_Extension
             $result='Especial - Cursos Chico';
         }elseif ($value==6){
             $result='Especial - Cursos Grande';
+        }
+        return $result;
+    }
+
+    public function categoriaFilter($value)
+    {
+        $result='';
+        if($value==1){
+            $result='Fondo Blanco';
+        }elseif($value==2){
+            $result='Fondo Negro';
+        }
+        return $result;
+    }
+
+    public function pedidoFilter($value)
+    {
+        $result='';
+        if($value==1){
+            $result='Solicitado';
+        }elseif($value==2){
+            $result='Enviado';
+        }elseif ($value==3){
+            $result='Entregado';
+        }elseif ($value==4){
+            $result='Cancelado';
         }
         return $result;
     }

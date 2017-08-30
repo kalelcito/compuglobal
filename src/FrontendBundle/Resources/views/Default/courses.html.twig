@@ -63,60 +63,14 @@
                         <p>{{ chico.descripcion }}</p>
                         <h2>{{ chico.textoAlternativo }}</h2>
                     </div>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(194,6,5);">
-                            <h4>9 de Septiembre</h4>
-                            <h5>El gerente coach en ventas</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(162,8,4);">
-                            <h4>14 de OCTUBRE</h4>
-                            <h5>Planeación estratégica y balance scord card</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(119,5,0);">
-                            <h4>25 DE NOVIEMBRE</h4>
-                            <h5>Planeación, Integración y Trabajo en Equipo</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(0,40,65);">
-                            <h4>13 de enero</h4>
-                            <h5>Liderazgo y coaching para equipos</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(1,58,90);">
-                            <h4>17 de febrero</h4>
-                            <h5>Actitud tu capital</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(1,84,133);">
-                            <h4>17 de marzo</h4>
-                            <h5>Ventas, programación neurolingüística y coaching</h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(200,113,0);">
-                            <h4>PRÓXIMAMENTE </h4>
-                            <h5>Ventas, programación neurolingüística y coaching </h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(249,142,0);">
-                            <h4>PRÓXIMAMENTE </h4>
-                            <h5>Ventas, programación neurolingüística y coaching </h5>
-                        </div>
-                    </a>
-                    <a href="{{ path('course',{'slug':'curso'}) }}">
-                        <div class="col-sm-2" style="background: rgb(255,180,0);">
-                            <h4>PRÓXIMAMENTE </h4>
-                            <h5>Ventas, programación neurolingüística y coaching </h5>
-                        </div>
-                    </a>
+                    {% for curso in cursos %}
+                        <a href="{{ path('course',{'slug':curso.slug}) }}">
+                            <div class="col-sm-2" style="background: {{ curso.colorFondo }};">
+                                <h4 style="color: {{ curso.colorFecha }}">{{ curso.fecha|localizeddate('short','none','es',null,"d 'de' MMMM") }}</h4>
+                                <h5 style="color: {{ curso.colorTitulo }};">{{ curso.titulo }}</h5>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

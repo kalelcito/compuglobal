@@ -6,6 +6,29 @@
 
 {% block title %}{{ parent() }} | Inicio{% endblock %}
 
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            function goToByScroll(id){
+                id = id.replace("link", "");
+                $('html,body').animate({
+                        scrollTop: $("#"+id).offset().top},
+                    'slow');
+            }
+
+            $(".second-row a.link").click(function(e) {
+                e.preventDefault();
+                goToByScroll($(this).attr("id"));
+            });
+            {% if id!='' %}
+            $('html,body').animate({
+                    scrollTop: $("#{{ id }}").offset().top},
+                'slow');
+            {% endif %}
+        });
+    </script>
+{% endblock %}
+
 {% block body %}
     <div class="row no-margin grey">
         <div class="col-md-12">

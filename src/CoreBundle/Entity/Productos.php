@@ -41,7 +41,7 @@ class Productos
     protected $imagen;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=150, nullable=true)
      */
     protected $descripcion;
 

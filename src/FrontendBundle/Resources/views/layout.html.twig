@@ -42,12 +42,12 @@
                                 <li role="presentation"><a href="{{ path('contact') }}" {% block contacto %}{% endblock %}>Contacto</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right second-row">
-                                <li role="presentation"><a class="link" href="{{ path('homepage') }}" id="solucioneslink">Soluciones</a></li>
+                                <li role="presentation"><a class="link" href="#" id="solucioneslink">Soluciones</a></li>
                                 <li role="presentation"><a href="{{ path('blog') }}" {% block publicaciones %}{% endblock %}>Publicaciones</a></li>
-                                <li role="presentation"><a class="link" href="{{ path('homepage') }}" id="videoslink">Videos</a></li>
-                                <li role="presentation"><a class="link" href="{{ path('homepage') }}" id="bloglink">Blog</a></li>
-                                <li role="presentation"><a class="link" href="{{ path('homepage') }}" id="capacitacioneslink">Capacitaciones</a></li>
-                                <li role="presentation"><a class="link" href="{{ path('homepage') }}" id="tagmarketinglink">TagMarketing</a></li>
+                                <li role="presentation"><a class="link" href="#" id="videoslink">Videos</a></li>
+                                <li role="presentation"><a class="link" href="#" id="bloglink">Blog</a></li>
+                                <li role="presentation"><a class="link" href="#" id="capacitacioneslink">Capacitaciones</a></li>
+                                <li role="presentation"><a class="link" href="#" id="tagmarketinglink">TagMarketing</a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,22 +77,10 @@
             <div class="container">
                 <div class="row register">
                     <div class="col-md-12">
-                        <form>
-                            <div class="col-sm-2">
-                                <h3>Regístrate</h3></div>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" required="" placeholder="Tu nombre">
-                            </div>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="email" required="" placeholder="Tu correo">
-                            </div>
-                            <div class="col-sm-2">
-                                <button class="btn btn-default btn-block btn-register" type="submit">Listo</button>
-                            </div>
-                        </form>
+                        {{ render(controller('FrontendBundle:partials:registro')) }}
                     </div>
                 </div>
-                <p>Recibe nuestras promociones y novedades en el mundo de la tecnología.</p>
+                <p id="first-reg">Recibe nuestras promociones y novedades en el mundo de la tecnología.</p>
                 <div class="row">
                     <div class="col-sm-3 col-xs-6 margin-tb"><img class="img-responsive" src="{{ asset('assets/img/logo.png') }}"></div>
                     <div class="col-sm-4 col-xs-12 margin-tb">
@@ -161,6 +149,9 @@
             </div>
         </div>
     </div>
+    <form id="links" action="{{ path('homepage') }}" method="post">
+        <input class="hidden" value="" id="ide" name="ide">
+    </form>
 
     <!-- SCRIPTS -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -168,18 +159,14 @@
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     {% block javascripts %}{% endblock %}
     <script>
-        $(document).ready(function () {
-            function goToByScroll(id){
-                id = id.replace("link", "");
-                $('html,body').animate({
-                        scrollTop: $("#"+id).offset().top},
-                    'slow');
-            }
-
-            $(".second-row a.link").click(function(e) {
+        $('.link').click(function (e) {
+            {% if app.request.get('_route') == 'homepage' %}
+            {% else %}
                 e.preventDefault();
-                goToByScroll($(this).attr("id"));
-            });
+                var id = $(this).attr('id').replace("link", "");
+                $('#ide').attr('value',id);
+                $('#links').submit();
+            {% endif %}
         });
     </script>
 </body>

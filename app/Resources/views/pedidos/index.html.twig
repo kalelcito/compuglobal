@@ -1,0 +1,51 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'Compuglobal','submenu':'Pedidos'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('admin/plugins/bower_components/datatables/jquery.dataTables.min.js') }}"></script><script>
+    $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Pedidos</h3>
+               {#<p class="text-muted m-b-30">{{ Pedidos</p>#}
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>No.</th>  <th>Email</th> <th>Producto</th>  <th>Cantidad</th> <th>Total</th>  <th>Status</th>   <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 1 %}
+                    {% for pedido in pedidos %}
+                    <tr>
+                        <td>{{ i }}</td> <td>{{ pedido.email }}</td> <td><a href="{{ path('productos_show',{id:pedido.productos.id}) }}">{{ pedido.productos.sku }}</a></td>    <td>{{ pedido.cantidad }}</td>  <td>{{ pedido.total }}</td> <td>{{  pedido.status|pedido }}</td>  <td>
+                                    <div class="btn-group btn-group-xs">
+                                        <a href="{{ path('pedidos_show', { 'id': pedido.id }) }}" data-toggle="tooltip" title="Ver" class="btn btn-default"><i class="fa fa-list-ul"></i></a>
+                                        <a href="{{ path('pedidos_edit', { 'id': pedido.id }) }}" data-toggle="tooltip" title="Editar" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                                    </div>
+                                </td>
+                    </tr>
+                    {% set i=i+1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

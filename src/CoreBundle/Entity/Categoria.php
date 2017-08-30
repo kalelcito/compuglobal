@@ -22,6 +22,11 @@ class Categoria
     protected $id;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $tipo;
+
+    /**
      * @ORM\Column(type="string", length=30, nullable=true)
      */
     protected $nombre;
@@ -61,6 +66,10 @@ class Categoria
         $this->productos = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->nombre;
+    }
+
     /**
      * Set the value of id.
      *
@@ -82,6 +91,29 @@ class Categoria
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set the value of tipo.
+     *
+     * @param integer $tipo
+     * @return \CoreBundle\Entity\Categoria
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipo.
+     *
+     * @return integer
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
     }
 
     /**
@@ -237,6 +269,6 @@ class Categoria
 
     public function __sleep()
     {
-        return array('id', 'nombre', 'color', 'activo', 'created_at', 'updated_at');
+        return array('id', 'tipo', 'nombre', 'color', 'activo', 'created_at', 'updated_at');
     }
 }

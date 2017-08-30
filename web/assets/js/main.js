@@ -74,11 +74,65 @@ $(document).ready(function(){
     $('.tecnologia-controles .text-center').click(function(){
         $('.tecnologia-carousel .carousel').carousel($(this).attr('data-slide'));
     });
+
+    //modal pedido
+    $("*[sku]").click(function (e) {
+        e.preventDefault();
+        var sku = $(this).attr('sku');
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('act'),
+            data: {sku:sku},
+            success: function (data) {
+                $('#prod-titulo').html(data.titulo);
+                $('#prod-desc').html(data.descripcion);
+                $('#prod-sku').html(data.sku);
+                $('.pedido-sku').val(data.sku);
+                $('#prod-precio').html('$ '+data.precio);
+                $('.quantity').attr('precio',data.precio);
+                $('#pedido').modal('show');
+            }
+        });
+    });
+
+    //products
+    $('.over,.over2').click(function(){
+        $('#pedido').modal('show');
+    });
+
+    $('.finish').click(function(e){
+        e.preventDefault();
+        $('#status-pedido').html('');
+        $
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('action'),
+            data: $("#pedido-form").serialize(),
+            success: function (data) {
+                if(data.status==1){
+                    $('#pedido').modal('hide');
+                    $('#pedido :input')
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+                        .removeAttr('checked')
+                        .removeAttr('selected');
+                    var total = 0;
+                    $('#pedido .resume h2').text('$ '+total.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                    $('#gracias').modal('show');
+                }else if(data.errores.length > 0){
+                    data.errores.forEach(function (item,index) {
+                        $('#status-pedido').append('<p>'+item.campo+': '+item.mensaje+'</p>');
+                    })
+                }
+                $('#status-pedido').show();
+            }
+        });
+    });
     
     //sum
     $('.quantity:input').bind('keyup mouseup',function(){
         var x = $(this).val();
-        var price = 6250;
+        var price = $(this).attr('precio');
         var total = price * x;
         $('#pedido .resume h2').text('$ '+total.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
     });
@@ -121,29 +175,59 @@ $(document).ready(function(){
         });
     });
 
+    //inscripcion a curso
+    $('#submit-ins').click(function (e) {
+        e.preventDefault();
+        $('#status').html('');
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('action'),
+            data: $("#inscripcion-form").serialize(),
+            success: function (data) {
+                if(data.status==1){
+                    $('#curso-add').modal('hide');
+                    $('#curso-fin').modal('show');
+                }else if(data.status==2){
+                    $('#status').append('<p>El correo o el teléfono ya están registrados!</p>');
+                }else if (data.errores.length > 0){
+                    data.errores.forEach(function (item,index) {
+                        $('#status').append('<p>'+item.campo+': '+item.mensaje+'</p>');
+                    })
+                }
+                $('#status').show();
+            }
+        });
+    });
+
+    //suscripcion
+    $('#registro').click(function (e) {
+        e.preventDefault();
+        $('#status-reg').html('');
+        $.ajax({
+            type: "POST",
+            url: $('#registro-form').attr('action'),
+            data: $("#registro-form").serialize(),
+            success: function (data) {
+                if(data.status==1){
+                    $('#status-reg').append('<p>Gracias por tu Registro. Pronto recibirás nuestras promociones y novedades!</p>');
+                    $('#first-reg').hide();
+                    $('#registro-form').hide();
+                }else if(data.status==2){
+                    $('#status-reg').append('<p>El correo ya está registrado!</p>');
+                }else if (data.errores.length > 0){
+                    data.errores.forEach(function (item,index) {
+                        $('#status-reg').append('<p>'+item.campo+': '+item.mensaje+'</p>');
+                    })
+                }
+                $('#status-reg').show();
+            }
+        });
+    });
+
     //modals
-    $('a[data-toggle="modal"]').click(function(){
+    $('*[data-toggle="modal"]').click(function(){
         var name = $(this).attr("modal");
         $('#'+name).modal('show');
-    });
-
-    //products
-    $('.over,.over2').click(function(){
-        $('#pedido').modal('show');
-    });
-
-    $('.finish').click(function(){
-        $('#pedido').modal('hide');
-        $('#gracias').modal('show');
-    });
-    
-    //modals cursos
-    $('[data-toggle="modal"]').click(function(){
-        var name = $(this).attr("modal");
-        $('#'+name).modal('show');
-    });
-    $('.interesado').click(function(){
-        $('#curso-add').modal('show');
     });
 });
 

@@ -26,7 +26,7 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cursos = $em->getRepository('CoreBundle:Curso')->findAll();
+        $cursos = $em->getRepository('CoreBundle:Curso')->findAll(array(),array('fecha'=>'DESC'));
 
         return $this->render('curso/index.html.twig', array(
             'cursos' => $cursos,
@@ -47,6 +47,20 @@ class CursoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            if($curso->getImagen()){
+                $file = $curso->getImagen();
+
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+                $file->move(
+                    $this->getParameter('img_directory'),
+                    $fileName
+                );
+
+                $curso->setImagen($fileName);
+            }
+
             $em->persist($curso);
             $em->flush();
 
@@ -85,10 +99,27 @@ class CursoController extends Controller
     {
         $deleteForm = $this->createDeleteForm($curso);
         $editForm = $this->createForm('CoreBundle\Form\CursoType', $curso);
+        $tmp = $curso->getImagen();
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            if($curso->getImagen()){
+                $file = $curso->getImagen();
+
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+                $file->move(
+                    $this->getParameter('img_directory'),
+                    $fileName
+                );
+
+                $curso->setImagen($fileName);
+            }else{
+                $curso->setImagen($tmp);
+            }
+
             $em->persist($curso);
             $em->flush();
 
@@ -117,6 +148,7 @@ class CursoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            unlink($this->getParameter('img_directory').'/'.$curso->getImagen());
             $em->remove($curso);
             $em->flush();
         }

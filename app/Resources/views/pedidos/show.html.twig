@@ -1,0 +1,78 @@
+    {% extends '@Admin/base.html.twig' %}
+{% block navegacion %}
+{{ include('@Admin/partials/navegacion.html.twig',{'menu':'Compuglobal','submenu':'Pedidos'}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script src="{{ asset('admin/js/jasny-bootstrap.js') }}"></script>
+{% endblock %}
+
+    {% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Ver Registro</h3>                <form class="form-horizontal" role="form">                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Id</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.id }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.nombre }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.email }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Telefono</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.telefono }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                        <label class="col-sm-2 control-label">Producto</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">                       <a href="{{ path('productos_show',{id:pedido.productos.id}) }}">{{ pedido.productos.sku }}</a>                                </p>
+                        </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Cantidad</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.cantidad }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Total</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{ pedido.total }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Status</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {{  pedido.status|pedido }}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Solicitado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if pedido.createdat %}{{ pedido.createdat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Actualizado</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">                                        {% if pedido.updatedat %}{{ pedido.updatedat|date('Y-m-d H:i:s') }}{% endif %}                                </p>
+                            </div>
+                        </div>                    <div class="form-group m-b-0">
+                        <div class="col-sm-12">
+                                                                    <a class="btn btn-inverse waves-effect waves-light m-t-10" style="float:left; margin:5px;" href="{{ path('pedidos_index') }}">Regresar</a>            <a class="btn btn-info waves-effect waves-light m-t-10" style="float:left;  margin:5px;"  href="{{ path('pedidos_edit', { 'id': pedido.id }) }}">Editar</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

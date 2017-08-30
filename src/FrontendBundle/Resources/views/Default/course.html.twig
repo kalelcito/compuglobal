@@ -28,137 +28,24 @@
             <div class="container curso">
                 <div class="row margin-tb">
                     <div class="col-sm-4">
-                        <div class="div-tam">
-                            <h3>9 de septiembre</h3>
-                            <h4>El gerente coach en ventas</h4></div>
+                        <div class="div-tam" style="background: {{ curso.colorFondo }}">
+                            <h3 style="color: {{ curso.colorFecha }};">{{ curso.fecha|localizeddate('short','none','es',null,"d 'de' MMMM") }}</h3>
+                            <h4 style="color: {{ curso.colorTitulo }}">{{ curso.titulo }}</h4>
+                        </div>
                     </div>
                     <div class="col-sm-8">
-                        <img class="img-responsive tam" src="{{ asset('assets/img/curso_1.jpg') }}">
+                        <img class="img-responsive tam" src="{{ asset('uploads/images/'~curso.imagen) }}">
                     </div>
                 </div>
                 <div class="row curso-desc">
                     <div class="col-md-12">
-                        <h2 class="text-center">OBJETIVO DEL CURSO</h2>
-                        <p class="text-center">Desarrollar habilidades y ofrecer herramientas de un Líder-Coach a los
-                            gerentes que tienen a su cargo equipos comerciales con la finalidad de potencializar la
-                            creación de resultados extraordinarios de forma estrátegica inmediata
-                            provocando el cambio en la fuerza de ventas y organizacional.</p>
-                        <h2 class="text-center">temario y módulos</h2>
-                        <p class="text-center">Estos módulos te ayudarán a gestionar de mejor manera tu liderazgo y a
-                            gerenciar de una mejor manera a tu equipo de trabajo.</p>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <h2 class="text-center">el líder coach y las ventas</h2>
-                                <p class="text-center">El coaching en ventas como herramienta.</p>
-                                <p class="text-center">El líder coach, competencias y características.</p>
-                                <p class="text-center">Las 5 piezas más importantes en el juego interno de las ventas</p>
-                            </div>
-                            <div class="col-xs-6">
-                                <h2 class="text-center">herramientas de alto impacto</h2>
-                                <p class="text-center">Habilidades conversacionales (Escucha activa, ciclo de
-                                    coordinación de acciones y feedback)</p>
-                                <p class="text-center">Metas y resultados</p>
-                                <p class="text-center">Preguntas poderosas</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <h2 class="text-center">liderazgo y coaching</h2>
-                                <p class="text-center">El líder en ventas y desempeño visión y acción del líder coach en ventas</p>
-                                <p class="text-center">El líder coach en ventas promoviendo la excelencia y gerenciando el cambio</p>
-                                <p class="text-center">El líder coach gerenciando el desempeño de sus colaboradores</p>
-                            </div>
-                            <div class="col-xs-6">
-                                <h2 class="text-center">coaching de equipos</h2>
-                                <p class="text-center">Desarrollo de competencias de equipo</p>
-                                <p class="text-center">El líder-coach en ventas y la dirección de reuniones</p>
-                                <p class="text-center">Manejo de conflictos y negociación en la venta</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_coach.png') }}"></div>
-                            <div class="col-xs-9">
-                                <h2>Imparte </h2>
-                                <h2 style="text-transform: none; margin-top:-10px;">Lic. Julián Robles Flores</h2>
-                                <p>Facilitador de los programas de formación de Coaching Profesional, de equipos y Líder
-                                    HAZ-Coach, mentor de diferentes procesos de certificación validando habilidades y
-                                    competencias desarrolladas.</p>
-                                <p>Coach transformacional y de equipos, orador y conferencista a nivel nacional, como
-                                    también coaching ejecutivo de equipos y vida con más de 1,500 horas de experiencia
-                                    (one to one) consultor y facilitador.</p>
-                                <p>Senior participando activamente en la creación y facilitación de diversos programas
-                                    en temas de liderazgo, habilidades directivas, ventas método SPIN, negociación,
-                                    change management, coaching, team building, protocolos
-                                    de servicio al cliente.</p>
-                            </div>
-                        </div>
-                        <h2>empresas que han tomado nuestro taller</h2>
-                        <div class="row margin-tb inc">
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_1.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_2.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_3.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_4.png') }}"></div>
-                        </div>
-                        <div class="row margin-tb inc">
-                            <div class="col-xs-4"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_5.png') }}"></div>
-                            <div class="col-xs-4"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_6.png') }}"></div>
-                            <div class="col-xs-4"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_7.png') }}"></div>
-                        </div>
-                        <div class="row margin-tb inc">
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_8.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_9.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_10.png') }}"></div>
-                            <div class="col-xs-3"><img class="img-responsive" src="{{ asset('assets/img/curso_inc_11.png') }}"></div>
-                        </div>
-                        <h2 class="text-center">¿qué incluye el taller?</h2>
-                        <p class="text-center">Manual por escrito</p>
-                        <p class="text-center">Dinámicas de participación</p>
-                        <p class="text-center">Coffee Break continuo durante la sesión</p>
-                        <p class="text-center">Alimentos incluídos</p>
-                        <p class="text-center" style="margin-top: 20px;">Certificado de participación con validez ante la STPS</p>
-                        <p class="text-center">Asesoría personalizada</p>
-                        <h2 class="text-center">algunas personas opinan</h2>
-                        <div class="row">
-                            <div class="col-xs-2"><img class="img-responsive" src="{{ asset('assets/img/opinion.png') }}"></div>
-                            <div class="col-xs-10">
-                                <blockquote>
-                                    <p>"El curso me pareció muy fructífero, bastante completo y muy dinámico. Aprendí
-                                        muchas cosas que sin problema puedo llevar a la práctica en mi ambiente de trabajo".</p>
-                                    <footer>Ana Lilia Bonifacio - Supervisor</footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <blockquote>
-                            <p>"No sabía que esperar del curso y tengo que reconocer que sobrepaso mis expectativas,
-                                creí que no me serviría, ya que me encuentro en un área de administrativa, sin embargo
-                                me di cuenta que aunque habemos personas que nunca
-                                hemos realizado una atención con clientes para vender algo pero si a clientes internos
-                                en los cuales puedo aplicarlo".</p>
-                            <footer>Mariana Orozco - Gerente de Recursos Humanos</footer>
-                        </blockquote>
-                        <blockquote>
-                            <p>"El curso realmente me gustó, el instructor fue muy profesional, toda la teoría la
-                                explico muy detallada muy entendible, muy práctica! y ya en los ejercicios de practica
-                                la dinamica fue muy interesante ya que si se llevaron
-                                a cabo todos los ejercicios, con un tiempo adecuado para cada uno...".</p>
-                            <footer>Iliana Navarrete - Gerente de ventas</footer>
-                        </blockquote>
-                        <h2 class="text-center">fotos de cursos y capacitaciones</h2>
-                        <div class="row fotos-cursos">
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_1.png') }}"></div>
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_2.png') }}"></div>
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_3.png') }}"></div>
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_4.png') }}"></div>
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_5.png') }}"></div>
-                            <div class="col-sm-4 col-xs-6"><img class="img-responsive" src="{{ asset('assets/img/cursos_fotos_6.png') }}"></div>
-                        </div>
-                        <h2 class="text-center">¡no lo piense mas y empodere a su equipo de trabajo!</h2>
+                        {{ curso.contenido|raw }}
                         <div class="row">
                             <div class="col-sm-6 col-sm-push-3">
-                                <div class="interesado">
+                                <div class="interesado" data-toggle="modal" modal="curso-add">
                                     <div class="col-xs-10">
                                         <h2 class="text-center">ESTOY INTERESADO</h2>
-                                        <h4 class="text-center">ADQUIERE EL CURSO POR $2,405 MNX + IVA</h4></div>
+                                        <h4 class="text-center">ADQUIERE EL CURSO POR ${{ curso.precio|number_format(2, '.', ',') }} MXN + IVA</h4></div>
                                     <div class="col-xs-2">
                                         <img class="img-responsive" src="{{ asset('assets/img/hand.png') }}">
                                     </div>
@@ -177,32 +64,35 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Adquirir Curso</h4></div>
                 <div class="modal-body">
-                    <form>
+                    {{ form_start(form,  {'action':path('course',{'slug':curso.slug})}) }}
                         <div class="row">
                             <div class="col-xs-5">
-                                <h2 class="text-center">Nombre </h2></div>
+                                <h2 class="text-center">Nombre</h2></div>
                             <div class="col-xs-7">
-                                <input class="form-control" type="text" required="" autofocus="">
+                                {{ form_widget(form.nombre, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-5">
-                                <h2 class="text-center">Correo </h2></div>
+                                <h2 class="text-center">Correo</h2></div>
                             <div class="col-xs-7">
-                                <input class="form-control" type="email" required="" autocomplete="off">
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-5">
-                                <h2 class="text-center">Teléfono </h2></div>
+                                <h2 class="text-center">Teléfono</h2></div>
                             <div class="col-xs-7">
-                                <input class="form-control" type="text" required="">
+                                {{ form_widget(form.telefono, {'attr': {'class': 'form-control '} }) }}
                             </div>
                         </div>
-                    </form>
+                    <div id="status" style="display: none; color: white;"></div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default pedido-btn" type="button" data-dismiss="modal">Cerrar </button><a class="btn btn-primary pedido-btn" role="button" href="#" data-toggle="modal" modal="curso-fin" data-dismiss="modal">Enviar </a></div>
+                    <button class="btn btn-default pedido-btn" type="button" data-dismiss="modal">Cerrar </button>
+                    <button class="btn btn-primary pedido-btn" type="submit" id="submit-ins">Enviar</button>
+                </div>
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
