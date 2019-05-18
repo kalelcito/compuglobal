@@ -2,20 +2,12 @@
 
 namespace Gedmo\Loggable\Document;
 
-use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoODM;
+use Doctrine\ODM\MongoDB\Mapping\Annotations\Document;
 
 /**
  * Gedmo\Loggable\Document\LogEntry
  *
- * @MongoODM\Document(
- *     repositoryClass="Gedmo\Loggable\Document\Repository\LogEntryRepository",
- *     indexes={
- *         @MongoODM\Index(keys={"objectId"="asc", "objectClass"="asc", "version"="asc"}),
- *         @MongoODM\Index(keys={"loggedAt"="asc"}),
- *         @MongoODM\Index(keys={"objectClass"="asc"}),
- *         @MongoODM\Index(keys={"username"="asc"})
- *     }
- * )
+ * @Document(repositoryClass="Gedmo\Loggable\Document\Repository\LogEntryRepository")
  */
 class LogEntry extends MappedSuperclass\AbstractLogEntry
 {

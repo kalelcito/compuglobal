@@ -16,7 +16,6 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\PhpExecutableFinder;
 use Composer\Script\Event;
-use Composer\Util\ProcessExecutor;
 
 /**
  * @author Jordi Boggiano <j.boggiano@seld.be>
@@ -113,7 +112,7 @@ class ScriptHandler
     protected static function prepareDeploymentTargetHeroku(Event $event)
     {
         $options = static::getOptions($event);
-        if (($stack = getenv('STACK')) && ('cedar-14' == $stack || 'heroku-16' == $stack)) {
+        if (($stack = getenv('STACK')) && ($stack == 'cedar-14' || $stack == 'heroku-16')) {
             $fs = new Filesystem();
             if (!$fs->exists('Procfile')) {
                 $event->getIO()->write('Heroku deploy detected; creating default Procfile for "web" dyno');
@@ -178,7 +177,7 @@ class ScriptHandler
             return;
         }
 
-        static::executeCommand($event, $consoleDir, 'assets:install '.$symlink.ProcessExecutor::escape($webDir), $options['process-timeout']);
+        static::executeCommand($event, $consoleDir, 'assets:install '.$symlink.escapeshellarg($webDir), $options['process-timeout']);
     }
 
     /**
@@ -281,9 +280,9 @@ EOF
 
     protected static function executeCommand(Event $event, $consoleDir, $cmd, $timeout = 300)
     {
-        $php = ProcessExecutor::escape(static::getPhp(false));
-        $phpArgs = implode(' ', array_map(array('Composer\Util\ProcessExecutor', 'escape'), static::getPhpArguments()));
-        $console = ProcessExecutor::escape($consoleDir.'/console');
+        $php = escapeshellarg(static::getPhp(false));
+        $phpArgs = implode(' ', array_map('escapeshellarg', static::getPhpArguments()));
+        $console = escapeshellarg($consoleDir.'/console');
         if ($event->getIO()->isDecorated()) {
             $console .= ' --ansi';
         }
@@ -291,20 +290,20 @@ EOF
         $process = new Process($php.($phpArgs ? ' '.$phpArgs : '').' '.$console.' '.$cmd, null, null, null, $timeout);
         $process->run(function ($type, $buffer) use ($event) { $event->getIO()->write($buffer, false); });
         if (!$process->isSuccessful()) {
-            throw new \RuntimeException(sprintf("An error occurred when executing the \"%s\" command:\n\n%s\n\n%s", ProcessExecutor::escape($cmd), self::removeDecoration($process->getOutput()), self::removeDecoration($process->getErrorOutput())));
+            throw new \RuntimeException(sprintf("An error occurred when executing the \"%s\" command:\n\n%s\n\n%s", escapeshellarg($cmd), self::removeDecoration($process->getOutput()), self::removeDecoration($process->getErrorOutput())));
         }
     }
 
     protected static function executeBuildBootstrap(Event $event, $bootstrapDir, $autoloadDir, $timeout = 300)
     {
-        $php = ProcessExecutor::escape(static::getPhp(false));
-        $phpArgs = implode(' ', array_map(array('Composer\Util\ProcessExecutor', 'escape'), static::getPhpArguments()));
-        $cmd = ProcessExecutor::escape(__DIR__.'/../Resources/bin/build_bootstrap.php');
-        $bootstrapDir = ProcessExecutor::escape($bootstrapDir);
-        $autoloadDir = ProcessExecutor::escape($autoloadDir);
+        $php = escapeshellarg(static::getPhp(false));
+        $phpArgs = implode(' ', array_map('escapeshellarg', static::getPhpArguments()));
+        $cmd = escapeshellarg(__DIR__.'/../Resources/bin/build_bootstrap.php');
+        $bootstrapDir = escapeshellarg($bootstrapDir);
+        $autoloadDir = escapeshellarg($autoloadDir);
         $useNewDirectoryStructure = '';
         if (static::useNewDirectoryStructure(static::getOptions($event))) {
-            $useNewDirectoryStructure = ProcessExecutor::escape('--use-new-directory-structure');
+            $useNewDirectoryStructure = escapeshellarg('--use-new-directory-structure');
         }
 
         $process = new Process($php.($phpArgs ? ' '.$phpArgs : '').' '.$cmd.' '.$bootstrapDir.' '.$autoloadDir.' '.$useNewDirectoryStructure, getcwd(), null, null, $timeout);

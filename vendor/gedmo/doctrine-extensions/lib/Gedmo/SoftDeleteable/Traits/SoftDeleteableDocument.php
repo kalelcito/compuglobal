@@ -14,14 +14,14 @@ trait SoftDeleteableDocument
 {
     /**
      * @var \DateTime
-     * @ODM\Field(type="date")
+     * @ODM\Date
      */
     protected $deletedAt;
 
     /**
      * Sets deletedAt.
      *
-     * @param \DateTime|null $deletedAt
+     * @param \Datetime|null $deletedAt
      *
      * @return $this
      */

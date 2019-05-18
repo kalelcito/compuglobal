@@ -41,8 +41,11 @@ class MessageDataCollector extends DataCollector
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-        $this->reset();
-
+        $this->data = array(
+            'mailer' => array(),
+            'messageCount' => 0,
+            'defaultMailer' => '',
+        );
         // only collect when Swiftmailer has already been initialized
         if (class_exists('Swift_Mailer', false)) {
             $mailers = $this->container->getParameter('swiftmailer.mailers');
@@ -62,18 +65,6 @@ class MessageDataCollector extends DataCollector
                 }
             }
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function reset()
-    {
-        $this->data = array(
-            'mailer' => array(),
-            'messageCount' => 0,
-            'defaultMailer' => '',
-        );
     }
 
     /**

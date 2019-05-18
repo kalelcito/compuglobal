@@ -3,9 +3,9 @@
 namespace Incenteev\ParameterHandler\Tests;
 
 use Incenteev\ParameterHandler\ScriptHandler;
-use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTestCase;
 
-class ScriptHandlerTest extends TestCase
+class ScriptHandlerTest extends ProphecyTestCase
 {
     private $event;
     private $io;
@@ -34,12 +34,7 @@ class ScriptHandlerTest extends TestCase
 
         chdir(__DIR__);
 
-        if (method_exists($this, 'expectException')) {
-            $this->expectException('InvalidArgumentException');
-            $this->expectExceptionMessage($exceptionMessage);
-        } else {
-            $this->setExpectedException('InvalidArgumentException', $exceptionMessage);
-        }
+        $this->setExpectedException('InvalidArgumentException', $exceptionMessage);
 
         ScriptHandler::buildParameters($this->event->reveal());
     }

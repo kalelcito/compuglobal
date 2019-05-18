@@ -18,7 +18,9 @@ use Sensio\Bundle\FrameworkExtraBundle\DependencyInjection\Compiler\LegacyPass;
  */
 
 /**
- * @author Fabien Potencier <fabien@symfony.com>
+ * SensioFrameworkExtraBundle.
+ *
+ * @author     Fabien Potencier <fabien@symfony.com>
  */
 class SensioFrameworkExtraBundle extends Bundle
 {

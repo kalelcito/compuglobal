@@ -11,7 +11,6 @@
 
 namespace Sensio\Bundle\GeneratorBundle\Command;
 
-use Sensio\Bundle\GeneratorBundle\Manipulator\RoutingManipulator;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -99,20 +98,8 @@ EOT
 
         $questionHelper->writeSection($output, 'Controller generation');
 
-        $routingFormat = $input->getOption('route-format');
-        /** @var ControllerGenerator $generator */
         $generator = $this->getGenerator($bundle);
-        $generator->generate(
-            $bundle,
-            $controller,
-            $routingFormat,
-            $input->getOption('template-format'),
-            $this->parseActions($input->getOption('actions'))
-        );
-
-        if ('annotations' === $routingFormat) {
-            $this->tryUpdateAnnotationRouting($bundle, $controller);
-        }
+        $generator->generate($bundle, $controller, $input->getOption('route-format'), $input->getOption('template-format'), $this->parseActions($input->getOption('actions')));
 
         $output->writeln('Generating the bundle code: <info>OK</info>');
 
@@ -195,8 +182,10 @@ EOT
         $input->setOption('actions', $this->addActions($input, $output, $questionHelper));
 
         // summary
-        $questionHelper->writeSection($output, 'Summary before generation');
         $output->writeln(array(
+            '',
+            $this->getHelper('formatter')->formatBlock('Summary before generation', 'bg=blue;fg-white', true),
+            '',
             sprintf('You are going to generate a "<info>%s:%s</info>" controller', $bundle, $controller),
             sprintf('using the "<info>%s</info>" format for the routing and the "<info>%s</info>" format', $routeFormat, $templateFormat),
             'for templating',
@@ -343,16 +332,5 @@ EOT
     protected function createGenerator()
     {
         return new ControllerGenerator($this->getContainer()->get('filesystem'));
-    }
-
-    private function tryUpdateAnnotationRouting($bundleName, $controller)
-    {
-        $routing = new RoutingManipulator($this->getContainer()->getParameter('kernel.root_dir').'/config/routing.yml');
-
-        if ($routing->hasResourceInAnnotation($bundleName)) {
-            return;
-        }
-
-        $routing->addAnnotationController($bundleName, $controller);
     }
 }

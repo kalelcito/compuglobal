@@ -108,7 +108,7 @@ abstract class AbstractPersonalTranslation
     /**
      * Set object related
      *
-     * @param object $object
+     * @param string $object
      *
      * @return static
      */

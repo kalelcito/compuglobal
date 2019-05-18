@@ -4,11 +4,11 @@ macro with a filter
 {% import _self as test %}
 
 {% macro test() %}
-    {% apply escape %}foo<br />{% endapply %}
+    {% filter escape %}foo<br />{% endfilter %}
 {% endmacro %}
 
 {{ test.test() }}
 --DATA--
-return []
+return array();
 --EXPECT--
 foo&lt;br /&gt;

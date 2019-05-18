@@ -408,6 +408,9 @@ class NestedTreeRepository extends AbstractTreeRepository
 
         $config = $this->listener->getConfiguration($this->_em, $meta->name);
         $parent = $wrapped->getPropertyValue($config['parent']);
+        if (isset($config['root']) && !$parent) {
+            throw new InvalidArgumentException("Cannot get siblings from tree root node");
+        }
 
         $left = $wrapped->getPropertyValue($config['left']);
 
@@ -424,11 +427,6 @@ class NestedTreeRepository extends AbstractTreeRepository
             $wrappedParent = new EntityWrapper($parent, $this->_em);
             $qb->andWhere($qb->expr()->eq('node.'.$config['parent'], ':pid'));
             $qb->setParameter('pid', $wrappedParent->getIdentifier());
-        } else if (isset($config['root']) && !$parent) {
-            $qb->andWhere($qb->expr()->eq('node.'.$config['root'], ':root'));
-            $qb->andWhere($qb->expr()->isNull('node.parent'));
-            $method = $config['rootIdentifierMethod'];
-            $qb->setParameter('root', $node->$method());
         } else {
             $qb->andWhere($qb->expr()->isNull('node.'.$config['parent']));
         }
@@ -485,6 +483,9 @@ class NestedTreeRepository extends AbstractTreeRepository
 
         $config = $this->listener->getConfiguration($this->_em, $meta->name);
         $parent = $wrapped->getPropertyValue($config['parent']);
+        if (isset($config['root']) && !$parent) {
+            throw new InvalidArgumentException("Cannot get siblings from tree root node");
+        }
 
         $left = $wrapped->getPropertyValue($config['left']);
 
@@ -501,11 +502,6 @@ class NestedTreeRepository extends AbstractTreeRepository
             $wrappedParent = new EntityWrapper($parent, $this->_em);
             $qb->andWhere($qb->expr()->eq('node.'.$config['parent'], ':pid'));
             $qb->setParameter('pid', $wrappedParent->getIdentifier());
-        } else if (isset($config['root']) && !$parent) {
-            $qb->andWhere($qb->expr()->eq('node.'.$config['root'], ':root'));
-            $qb->andWhere($qb->expr()->isNull('node.parent'));
-            $method = $config['rootIdentifierMethod'];
-            $qb->setParameter('root', $node->$method());
         } else {
             $qb->andWhere($qb->expr()->isNull('node.'.$config['parent']));
         }
@@ -903,19 +899,7 @@ class NestedTreeRepository extends AbstractTreeRepository
         $config = $this->listener->getConfiguration($this->_em, $meta->name);
 
         $identifier = $meta->getSingleIdentifierFieldName();
-        if (isset($config['root'])) {
-            if (isset($config['root'])) {
-                $rootId = $meta->getReflectionProperty($config['root'])->getValue($root);
-                if (is_object($rootId)) {
-                    $rootId = $meta->getReflectionProperty($identifier)->getValue($rootId);
-                }
-            } else {
-                $rootId = null;
-            }
-        } else {
-            $rootId = null;
-        }
-
+        $rootId = isset($config['root']) ? $meta->getReflectionProperty($config['root'])->getValue($root) : null;
         $qb = $this->getQueryBuilder();
         $qb->select($qb->expr()->min('node.'.$config['left']))
             ->from($config['useObjectClass'], 'node')

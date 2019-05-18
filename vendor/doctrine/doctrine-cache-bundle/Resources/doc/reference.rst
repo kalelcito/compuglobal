@@ -109,8 +109,6 @@ This provider defines no configuration options.
     Redis connection timeout
 ``database``
     Redis database selection (integer)
-``persistent``
-    Whether to use persistent connection or not (bool)
 
 ``predis``
 ~~~~~~~~~~

@@ -3,7 +3,6 @@
 namespace Gedmo\Mapping\Event;
 
 use Doctrine\Common\EventArgs;
-use Doctrine\ORM\UnitOfWork;
 
 /**
  * Doctrine event adapter interface is used

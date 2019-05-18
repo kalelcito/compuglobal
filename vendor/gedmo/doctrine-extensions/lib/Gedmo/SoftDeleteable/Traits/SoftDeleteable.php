@@ -18,7 +18,7 @@ trait SoftDeleteable
     /**
      * Sets deletedAt.
      *
-     * @param \DateTime|null $deletedAt
+     * @param \Datetime|null $deletedAt
      *
      * @return $this
      */

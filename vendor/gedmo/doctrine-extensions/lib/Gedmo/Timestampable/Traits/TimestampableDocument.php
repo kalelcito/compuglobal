@@ -16,21 +16,21 @@ trait TimestampableDocument
     /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
-     * @ODM\Field(type="date")
+     * @ODM\Date
      */
     protected $createdAt;
 
     /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="update")
-     * @ODM\Field(type="date")
+     * @ODM\Date
      */
     protected $updatedAt;
 
     /**
      * Sets createdAt.
      *
-     * @param  \DateTime $createdAt
+     * @param  \Datetime $createdAt
      * @return $this
      */
     public function setCreatedAt(\DateTime $createdAt)

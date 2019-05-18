@@ -28,13 +28,9 @@ class Annotation extends AbstractAnnotationDriver
      */
     protected $validTypes = array(
         'date',
-        'date_immutable',
         'time',
-        'time_immutable',
         'datetime',
-        'datetime_immutable',
         'datetimetz',
-        'datetimetz_immutable',
         'timestamp',
         'zenddate',
         'vardatetime',

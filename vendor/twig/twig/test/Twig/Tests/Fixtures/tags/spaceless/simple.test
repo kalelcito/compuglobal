@@ -1,7 +1,5 @@
 --TEST--
 "spaceless" tag removes whites between HTML tags
---DEPRECATION--
-The spaceless tag is deprecated since Twig 2.7, use the spaceless filter instead.
 --TEMPLATE--
 {% spaceless %}
 
@@ -9,6 +7,6 @@ The spaceless tag is deprecated since Twig 2.7, use the spaceless filter instead
 
 {% endspaceless %}
 --DATA--
-return []
+return array()
 --EXPECT--
 <div><div>   foo   </div></div>

@@ -64,5 +64,6 @@ class FunctionalTestCase extends TestCase
      */
     protected function overrideContainer(ContainerBuilder $container)
     {
+
     }
 }

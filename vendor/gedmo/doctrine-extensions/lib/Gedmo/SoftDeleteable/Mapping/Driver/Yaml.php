@@ -54,14 +54,6 @@ class Yaml extends File implements Driver
                     }
                     $config['timeAware'] = $classMapping['soft_deleteable']['time_aware'];
                 }
-
-                $config['hardDelete'] = true;
-                if (isset($classMapping['soft_deleteable']['hard_delete'])) {
-                    if (!is_bool($classMapping['soft_deleteable']['hard_delete'])) {
-                        throw new InvalidMappingException("hardDelete must be boolean. ".gettype($classMapping['soft_deleteable']['hard_delete'])." provided.");
-                    }
-                    $config['hardDelete'] = $classMapping['soft_deleteable']['hard_delete'];
-                }
             }
         }
     }

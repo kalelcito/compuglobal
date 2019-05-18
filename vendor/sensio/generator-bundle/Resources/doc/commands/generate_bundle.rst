@@ -32,26 +32,17 @@ forget to pass all needed options:
 
     If the ``generate:bundle`` command returns an error about registering the
     bundle namespace in ``composer.json``, add the following line to your
-    ``composer.json`` file within the ``psr-4`` section:
+    ``composer.json`` file within the ``psr-4`` section
+    ``"Acme\\Bundle\\BlogBundle\\": "src/Acme/Bundle/BlogBundle"``:
 
-    ``"Acme\\Bundle\\BlogBundle\\": "src/Acme/Bundle/BlogBundle"``
+.. code-block:: json
 
-    (for example:
-
-    .. code-block:: json
-
-        "autoload": {
-            "psr-4": {
-                "Acme\\Bundle\\BlogBundle\\": "src/Acme/Bundle/BlogBundle"
-            },
-            "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
+    "autoload": {
+        "psr-4": {
+            "Acme\\Bundle\\BlogBundle\\": "src/Acme/Bundle/BlogBundle"
         },
-
-    ), then execute the following command to regenerate the autoload files:
-
-    .. code-block:: bash
-
-        $ composer dump-autoload
+        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
+    },
 
 Available Options
 -----------------

@@ -1,6 +1,4 @@
-{% extends request.isXmlHttpRequest ? '@WebProfiler/Profiler/ajax_layout.html.twig' : '@WebProfiler/Profiler/layout.html.twig' %}
-
-{% import _self as helper %}
+{% extends app.request.isXmlHttpRequest ? '@WebProfiler/Profiler/ajax_layout.html.twig' : '@WebProfiler/Profiler/layout.html.twig' %}
 
 {% block toolbar %}
     {% if collector.querycount > 0 or collector.invalidEntityCount > 0 %}
@@ -115,8 +113,8 @@
         {{ render(controller('DoctrineBundle:Profiler:explain', {
             token: token,
             panel: 'db',
-            connectionName: request.query.get('connection'),
-            query: request.query.get('query')
+            connectionName: app.request.query.get('connection'),
+            query: app.request.query.get('query')
         })) }}
     {% else %}
         {{ block('queries') }}
@@ -240,7 +238,7 @@
                                 {{ query.sql|doctrine_pretty_query(highlight_only = true) }}
 
                                 <div>
-                                    <strong class="font-normal text-small">Parameters</strong>: {{ profiler_dump(query.params, 2) }}
+                                    <strong class="font-normal text-small">Parameters</strong>: {{ profiler_dump(query.params) }}
                                 </div>
 
                                 <div class="text-small font-normal">
@@ -265,7 +263,7 @@
                                 </div>
 
                                 {% if query.explainable %}
-                                    <div id="explain-{{ i }}-{{ loop.parent.loop.index }}" class="sql-explain"></div>
+                                    <div id="explain-{{ i }}-{{ loop.parent.loop.index }}"></div>
                                 {% endif %}
                             </td>
                         </tr>
@@ -282,7 +280,7 @@
             <p>There are no configured database connections.</p>
         </div>
     {% else %}
-        {{ helper.render_simple_table('Name', 'Service', collector.connections) }}
+        {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.connections, labels: ['Name', 'Service'] }, with_context = false ) }}
     {% endif %}
 
     <h2>Entity Managers</h2>
@@ -292,7 +290,7 @@
             <p>There are no configured entity managers.</p>
         </div>
     {% else %}
-        {{ helper.render_simple_table('Name', 'Service', collector.managers) }}
+        {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.managers, labels: ['Name', 'Service'] }, with_context = false ) }}
     {% endif %}
 
     <h2>Second Level Cache</h2>
@@ -308,7 +306,7 @@
             </div>
         {% else %}
             {% if profiler_markup_version == 1 %}
-                {{ helper.render_simple_table('Key', 'Value', collector.cacheCounts) }}
+                {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.cacheCounts }, with_context = false) }}
             {% else %}
                 <div class="metrics">
                     <div class="metric">
@@ -330,17 +328,17 @@
 
             {% if collector.cacheRegions.hits %}
                 <h3>Number of cache hits</h3>
-                {{ helper.render_simple_table('Region', 'Hits', collector.cacheRegions.hits) }}
+                {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.cacheRegions.hits }, with_context = false) }}
             {% endif %}
 
             {% if collector.cacheRegions.misses %}
                 <h3>Number of cache misses</h3>
-                {{ helper.render_simple_table('Region', 'Misses', collector.cacheRegions.misses) }}
+                {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.cacheRegions.misses }, with_context = false) }}
             {% endif %}
 
             {% if collector.cacheRegions.puts %}
                 <h3>Number of cache puts</h3>
-                {{ helper.render_simple_table('Region', 'Puts', collector.cacheRegions.puts) }}
+                {{ include('@WebProfiler/Profiler/table.html.twig', { data: collector.cacheRegions.puts }, with_context = false) }}
             {% endif %}
         {% endif %}
     {% endif %}
@@ -465,22 +463,3 @@
 
         //]]></script>
 {% endblock %}
-
-{% macro render_simple_table(label1, label2, data) %}
-    <table>
-        <thead>
-        <tr>
-            <th scope="col" class="key">{{ label1 }}</th>
-            <th scope="col">{{ label2 }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for key, value in data %}
-            <tr>
-                <th scope="row">{{ key }}</th>
-                <td>{{ value }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-{% endmacro %}

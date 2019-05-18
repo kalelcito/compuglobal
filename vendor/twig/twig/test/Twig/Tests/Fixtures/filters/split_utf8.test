@@ -1,5 +1,7 @@
 --TEST--
 "split" filter
+--CONDITION--
+function_exists('mb_get_info')
 --TEMPLATE--
 {{ "é"|split('', 10)|join('-') }}
 {{ foo|split(',')|join('-') }}
@@ -10,7 +12,7 @@
 {{ baz|split('', 1)|join('-') }}
 {{ baz|split('', 2)|join('-') }}
 --DATA--
-return ['foo' => 'Ä,é,Äほ', 'baz' => 'éÄßごa',]
+return array('foo' => 'Ä,é,Äほ', 'baz' => 'éÄßごa',)
 --EXPECT--
 é
 Ä-é-Äほ
